@@ -1,0 +1,29 @@
+{
+  "name": "lobbycms",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "Prg Mono <prgmono2018@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "test": "sanity check"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^0.140.0",
+    "@sanity/components": "^0.140.0",
+    "@sanity/core": "^0.140.0",
+    "@sanity/default-layout": "^0.140.0",
+    "@sanity/default-login": "^0.140.0",
+    "@sanity/desk-tool": "^0.140.0",
+    "axios": "^0.18.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.2",
+    "react-dom": "^16.2"
+  },
+  "devDependencies": {}
+}
