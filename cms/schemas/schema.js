@@ -6,7 +6,12 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // We import object and document schemas
 
 import lobby from './lobby'
-
+import wrapper from './wrapper'
+import oneObject from './oneObject'
+import splashScreen from './splashScreen'
+import video from './video';
+import components from './components';
+import application from './application';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,6 +25,12 @@ export default createSchema({
    // movie,
    // person,
    lobby,
+   wrapper,
+   oneObject,
+   splashScreen,
+   video,
+   components,
+   application
    // screening,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
