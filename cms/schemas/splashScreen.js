@@ -4,7 +4,7 @@ export default {
   
     name: 'splashScreen',
     title: 'Splash Screen',
-    type: 'document',
+    type: 'object',
     fields: [
         {
             name: 'splashScreenNamed',
@@ -31,8 +31,7 @@ export default {
         name: 'splashScreenOtherAnim',
         type: 'array',
         of: [{
-          type: 'reference',
-          to: [{type: 'oneObject'}]
+          type: 'keyval',
         }]
       }
      

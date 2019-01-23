@@ -14,26 +14,24 @@ export default {
       {
         title: 'Videos',
         name: 'videos',
-        type: 'reference',
-        to: [{type: 'video'}]
+        type: 'video',
+
       },
       {
         title: 'Components',
         name: 'components',
-        type: 'reference',
-        to: [{type: 'components'}]
+        type: 'components',
       },
       {
         title: 'Wrapper',
         name: 'wrapper',
-        type: 'reference',
-        to: [{type: 'wrapper'}]
+        type: 'wrapper',
       },
       {
         title: 'Splash screen',
-        name: 'application',
-        type: 'reference',
-        to: [{type: 'splashScreen'}]
+        name: 'splashScreen',
+        type: 'splashScreen',
+
       }
     ],
 

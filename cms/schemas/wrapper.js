@@ -4,7 +4,7 @@ export default {
   
     name: 'wrapper',
     title: 'Application Wrapper',
-    type: 'document',
+    type: 'object',
     fields: [
       {
         name: 'wrapperName',
@@ -51,8 +51,7 @@ export default {
         name: 'wrapperMoreObjects',
         type: 'array',
         of: [{
-          type: 'reference',
-          to: [{type: 'oneObject'}]
+          type: 'keyval',
         }]
       }
      

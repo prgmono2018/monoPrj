@@ -1,10 +1,10 @@
 //import icon from 'react-icons/lib/md/local-movies'
-
+import keyval from './keyval';
 export default {
   
     name: 'video',
     title: 'Videos',
-    type: 'document',
+    type: 'object',
     fields: [
     {
             name: 'videoName',
@@ -31,10 +31,10 @@ export default {
         name: 'OtheVideos',
         type: 'array',
         of: [{
-          type: 'reference',
-          to: [{type: 'oneObject'}]
+          type: 'keyval',
         }]
-    }
+    },
+   
      
     ],
   

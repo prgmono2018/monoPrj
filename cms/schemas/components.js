@@ -4,7 +4,7 @@ export default {
   
     name: 'components',
     title: 'Components',
-    type: 'document',
+    type: 'object',
     fields: [
     {
             name: 'ComponentName',
@@ -22,8 +22,7 @@ export default {
         name: 'moreGenericPopupWithanimation',
         type: 'array',
         of: [{
-          type: 'reference',
-          to: [{type: 'oneObject'}]
+          type: 'keyval',
         }]
     }
      

@@ -3,7 +3,7 @@
 export default {
   name: 'lobby',
   title: 'Lobby',
-  type: 'document',
+  type: 'object',
   //icon,
   fields: [
     {

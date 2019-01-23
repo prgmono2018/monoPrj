@@ -47,9 +47,9 @@ module.exports = {
 */
 exports.writeTemplateToJsonFile = function (req, res) {
     //console.log(">> writeTemplateToJsonFile="+JSON.parse(req.body.data).lobbyName);
-    console.log("here"+JSON.parse(req.body.data).lobbyName);
+    console.log("here"+JSON.parse(req.body.data).applicationName);
     //storeData(req.body.data,`./data/${JSON.parse(req.body.data).lobbyName}.json`,res);
-    uploadToS3(JSON.parse(req.body.data).lobbyName+".json",JSON.parse(req.body.data))
+    uploadToS3(JSON.parse(req.body.data).applicationName+".json",JSON.parse(req.body.data))
   };
 
   exports.getDataFromJsonFile = function (req, res) {
