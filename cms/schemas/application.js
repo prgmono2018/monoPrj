@@ -32,6 +32,12 @@ export default {
         name: 'splashScreen',
         type: 'splashScreen',
 
+      },
+      {
+        title: 'Lobby',
+        name: 'lobby',
+        type: 'lobby',
+
       }
     ],
 

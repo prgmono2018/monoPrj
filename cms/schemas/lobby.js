@@ -1,26 +1,30 @@
 //import icon from 'react-icons/lib/md/local-movies'
 
 export default {
+  
   name: 'lobby',
   title: 'Lobby',
   type: 'object',
-  //icon,
   fields: [
     {
-      name: 'lobbyName',
-      title: 'Lobby Name',
-      type: 'string'
-    },
-    {
-      name: 'lobbyBg',
-      title: 'Background',
-      description: 'Please enter the path of the resource',
-      type: 'string',
-      options: {
-        source: 'title',
-        maxLength: 100
-      }
-    }
+      title: 'Header',
+      name: 'headerObj',
+      type: 'header',
+      
+  },
+  {
+    title: 'Body',
+    name: 'bodyObj',
+    type: 'body',
+   
+},
+{
+  title: 'footer',
+  name: 'footerObj',
+  type: 'footer',
+  
+}
+   
   ],
 /*  preview: {
     select: {
@@ -42,4 +46,4 @@ export default {
       }
     }
   }*/
-}
+}  

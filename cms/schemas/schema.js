@@ -13,6 +13,9 @@ import video from './video';
 import components from './components';
 import application from './application';
 import keyval from './keyval';
+import header from './header';
+import footer from './footer';
+import body from './body';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,7 +35,10 @@ export default createSchema({
    video,
    components,
    application,
-   keyval
+   keyval,
+   header,
+   footer,
+   body
    // screening,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

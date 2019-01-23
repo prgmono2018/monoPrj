@@ -7,11 +7,6 @@ export default {
     type: 'object',
     fields: [
       {
-        name: 'wrapperName',
-        title: 'Wrapper Name',
-        type: 'string'
-      },
-      {
         name: 'Splash',
         title: 'Splash',
         type: 'string'

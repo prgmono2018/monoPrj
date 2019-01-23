@@ -6,11 +6,6 @@ export default {
     title: 'Splash Screen',
     type: 'object',
     fields: [
-        {
-            name: 'splashScreenNamed',
-            title: 'Name',
-            type: 'string'
-          },
       {
         name: 'splashScreenBackground',
         title: 'Background',

@@ -7,11 +7,6 @@ export default {
     type: 'object',
     fields: [
     {
-            name: 'videoName',
-            title: 'Name',
-            type: 'string'
-    },
-    {
         name: 'videoWebM',
         title: 'WebM',
         type: 'string'

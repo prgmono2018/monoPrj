@@ -7,11 +7,6 @@ export default {
     type: 'object',
     fields: [
     {
-            name: 'ComponentName',
-            title: 'Name',
-            type: 'string'
-    },
-    {
         name: 'componentsGenericPopupWithanimation',
         title: 'Generic Popup with animation',
         type: 'string'
