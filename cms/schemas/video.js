@@ -1,5 +1,6 @@
 //import icon from 'react-icons/lib/md/local-movies'
 import keyval from './keyval';
+import MyCustomStringInput from '../myComponents/VidImageView'
 export default {
   
     name: 'video',
@@ -9,23 +10,26 @@ export default {
     {
         name: 'videoWebM',
         title: 'WebM',
-        type: 'file'
+        type: 'string',
+        inputComponent: MyCustomStringInput,
     },
     {
         name: 'videoOggTheora',
         title: 'Ogg Theora',
-        type: 'file'
+        type: 'string',
+        inputComponent: MyCustomStringInput,
     },
     {
         name: 'videoMPEG4',
         title: 'MPEG-4',
-        type: 'file'
+        type: 'string',
+        inputComponent: MyCustomStringInput,
     },
     {
         title: 'OtherVideos',
         name: 'OtheVideos',
         type: 'array',
-        of: [{type: 'imageKeyVal'}, {type: 'keyval'}]
+        of: [{type: 'keyval'}]
     },
    
      

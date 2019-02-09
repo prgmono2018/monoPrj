@@ -1,5 +1,5 @@
 //import icon from 'react-icons/lib/md/local-movies'
-
+import MyCustomStringInput from '../myComponents/VidImageView'
 export default {
   
     name: 'splashScreen',
@@ -9,23 +9,26 @@ export default {
       {
         name: 'splashScreenBackground',
         title: 'Background',
-        type: 'image'
+        type: 'string',
+        inputComponent: MyCustomStringInput,
       },
       {
         name: 'splashScreenPreLoadAnim',
         title: 'Preloader Animation',
-        type: 'file'
+        type: 'string',
+        inputComponent: MyCustomStringInput,
       },
       {
         name: 'splashScreenMovie',
         title: 'Movie',
-        type: 'file'
+        type: 'string',
+        inputComponent: MyCustomStringInput,
       },
       {
         title: 'Other Animations',
         name: 'splashScreenOtherAnim',
         type: 'array',
-        of: [{type: 'imageKeyVal'}, {type: 'keyval'}]
+        of: [ {type: 'keyval'}]
       }
      
     ],

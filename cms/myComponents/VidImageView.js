@@ -19,7 +19,6 @@ export default class Slider extends React.Component {
       showPic:false,
       showVid:false
   };  
-    this.handleChange = this.handleChange.bind(this);
     this.handleImage = this.handleImage.bind(this);
     this.toggleAddComponents = this.toggleAddComponents.bind(this);
     this.saveData = this.saveData.bind(this);

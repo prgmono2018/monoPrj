@@ -1,5 +1,5 @@
 //import icon from 'react-icons/lib/md/local-movies'
-
+import MyCustomStringInput from '../myComponents/VidImageView'
 export default {
   
     name: 'components',
@@ -10,7 +10,7 @@ export default {
         name: 'componentsGenericPopupWithanimation',
         title: 'Generic Popup with animation',
         type: 'array',
-        of: [{type: 'imageKeyVal'}, {type: 'keyval'}]
+        of: [ {type: 'keyval'}]
     },
 
     {
@@ -18,7 +18,7 @@ export default {
         name: 'moreGenericPopupWithanimation',
         type: 'array',
         of: [{
-          type: 'keyval',  of: [{type: 'imageKeyVal'}, {type: 'keyval'}]
+          type: 'keyval',  of: [ {type: 'keyval'}]
         }]
     }
      

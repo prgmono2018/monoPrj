@@ -1,5 +1,5 @@
 //import icon from 'react-icons/lib/md/local-movies'
-
+import MyCustomStringInput from '../myComponents/VidImageView'
 export default {
   
     name: 'wrapper',
@@ -9,43 +9,50 @@ export default {
       {
         name: 'Splash',
         title: 'Splash',
-        type: 'image'
+        type: 'string',
+        inputComponent: MyCustomStringInput,
       },
       {
         name: 'wrapperIosAppIcon',
         title: 'Ios Icon',
-        type: 'image'
+        type: 'string',
+        inputComponent: MyCustomStringInput,
       },
       {
         name: 'wrapperAndroAppIcon',
         title: 'Android Icon',
-        type: 'image'
+        type: 'string',
+        inputComponent: MyCustomStringInput,
       },
       {
         name: 'wrapperWebAppIcon',
         title: 'Web Icon',
-        type: 'image'
+        type: 'string',
+        inputComponent: MyCustomStringInput,
       },
       {
         name: 'wrapperTabletAppIcon',
         title: 'Tablet Icon',
-        type: 'image'
+        type: 'string',
+        inputComponent: MyCustomStringInput,
       },
       {
         name: 'wrapperEmbeddedAppIcon',
         title: 'Embedded Icon',
-        type: 'image'
+        type: 'string',
+        inputComponent: MyCustomStringInput,
       },
       {
         name: 'wrapperLoadingAppIcon',
         title: 'Loading Icon',
-        type: 'image'
+        type: 'string',
+        inputComponent: MyCustomStringInput,
       },
       {
         title: 'More Objects',
         name: 'wrapperMoreObjects',
         type: 'array',
-        of: [{type: 'imageKeyVal'}, {type: 'keyval'}]
+        of: [ {type: 'keyval'}]
       }
      
     ],

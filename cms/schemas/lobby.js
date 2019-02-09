@@ -1,5 +1,5 @@
 //import icon from 'react-icons/lib/md/local-movies'
-
+import MyCustomStringInput from '../myComponents/VidImageView'
 export default {
   
   name: 'lobby',

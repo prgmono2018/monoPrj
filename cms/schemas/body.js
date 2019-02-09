@@ -1,5 +1,5 @@
 //import icon from 'react-icons/lib/md/local-movies'
-
+import MyCustomStringInput from '../myComponents/VidImageView'
 export default {
   
     name: 'body',
@@ -11,7 +11,7 @@ export default {
         title: 'Please add components to the body',
         name: 'bodyObjects',
         type: 'array',
-        of: [{type: 'imageKeyVal'}, {type: 'keyval'}]
+        of: [{type: 'imageKeyVal'}]
       }
      
     ],
