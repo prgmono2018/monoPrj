@@ -9,7 +9,8 @@ export default {
     {
         name: 'componentsGenericPopupWithanimation',
         title: 'Generic Popup with animation',
-        type: 'string'
+        type: 'array',
+        of: [{type: 'imageKeyVal'}, {type: 'keyval'}]
     },
 
     {
@@ -17,7 +18,7 @@ export default {
         name: 'moreGenericPopupWithanimation',
         type: 'array',
         of: [{
-          type: 'keyval',
+          type: 'keyval',  of: [{type: 'imageKeyVal'}, {type: 'keyval'}]
         }]
     }
      

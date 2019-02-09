@@ -11,9 +11,7 @@ export default {
         title: 'Please add components to the footer',
         name: 'footerObjects',
         type: 'array',
-        of: [{
-          type: 'keyval',
-        }]
+        of: [{type: 'imageKeyVal'}, {type: 'keyval'}]
       }
      
     ],

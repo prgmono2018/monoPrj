@@ -9,25 +9,23 @@ export default {
       {
         name: 'splashScreenBackground',
         title: 'Background',
-        type: 'string'
+        type: 'image'
       },
       {
         name: 'splashScreenPreLoadAnim',
         title: 'Preloader Animation',
-        type: 'string'
+        type: 'file'
       },
       {
         name: 'splashScreenMovie',
         title: 'Movie',
-        type: 'string'
+        type: 'file'
       },
       {
         title: 'Other Animations',
         name: 'splashScreenOtherAnim',
         type: 'array',
-        of: [{
-          type: 'keyval',
-        }]
+        of: [{type: 'imageKeyVal'}, {type: 'keyval'}]
       }
      
     ],

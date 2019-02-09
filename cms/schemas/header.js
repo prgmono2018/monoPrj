@@ -11,9 +11,7 @@ export default {
         title: 'Please add components to the header',
         name: 'headerObjects',
         type: 'array',
-        of: [{
-          type: 'keyval',
-        }]
+        of: [{type: 'imageKeyVal'}, {type: 'keyval'}]
       }
      
     ],

@@ -2,7 +2,7 @@
 import createSchema from 'part:@sanity/base/schema-creator'
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
-
+import MyCustomStringInput from '../myComponents/VidImageView'
 // We import object and document schemas
 
 import lobby from './lobby'
@@ -16,6 +16,7 @@ import keyval from './keyval';
 import header from './header';
 import footer from './footer';
 import body from './body';
+import imageKeyVal from './imageKeyVal';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -38,7 +39,9 @@ export default createSchema({
    keyval,
    header,
    footer,
-   body
+   body,
+   imageKeyVal,
+  
    // screening,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

@@ -1,17 +1,19 @@
+import MyCustomStringInput from '../myComponents/VidImageView'
 export default {
     name: 'keyval',
-    title: 'key val',
+    title: 'Add File',
     type: 'object',
     fields: [
       {
-        name: 'resourceName',
-        title: 'Resource Name',
+        name: 'ResourceName',
+        title: 'File Name',
         type: 'string'
       },
       {
         name: 'resourceUrl',
-        title: 'Resource Url',
-        type: 'string'
+        title: 'File Url',
+        type: 'string',
+        inputComponent: MyCustomStringInput,
       },
      
     ],

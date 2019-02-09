@@ -9,25 +9,23 @@ export default {
     {
         name: 'videoWebM',
         title: 'WebM',
-        type: 'string'
+        type: 'file'
     },
     {
         name: 'videoOggTheora',
         title: 'Ogg Theora',
-        type: 'string'
+        type: 'file'
     },
     {
         name: 'videoMPEG4',
         title: 'MPEG-4',
-        type: 'string'
+        type: 'file'
     },
     {
         title: 'OtherVideos',
         name: 'OtheVideos',
         type: 'array',
-        of: [{
-          type: 'keyval',
-        }]
+        of: [{type: 'imageKeyVal'}, {type: 'keyval'}]
     },
    
      

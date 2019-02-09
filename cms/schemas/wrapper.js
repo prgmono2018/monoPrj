@@ -9,45 +9,43 @@ export default {
       {
         name: 'Splash',
         title: 'Splash',
-        type: 'string'
+        type: 'image'
       },
       {
         name: 'wrapperIosAppIcon',
         title: 'Ios Icon',
-        type: 'string'
+        type: 'image'
       },
       {
         name: 'wrapperAndroAppIcon',
         title: 'Android Icon',
-        type: 'string'
+        type: 'image'
       },
       {
         name: 'wrapperWebAppIcon',
         title: 'Web Icon',
-        type: 'string'
+        type: 'image'
       },
       {
         name: 'wrapperTabletAppIcon',
         title: 'Tablet Icon',
-        type: 'string'
+        type: 'image'
       },
       {
         name: 'wrapperEmbeddedAppIcon',
         title: 'Embedded Icon',
-        type: 'string'
+        type: 'image'
       },
       {
         name: 'wrapperLoadingAppIcon',
         title: 'Loading Icon',
-        type: 'string'
+        type: 'image'
       },
       {
         title: 'More Objects',
         name: 'wrapperMoreObjects',
         type: 'array',
-        of: [{
-          type: 'keyval',
-        }]
+        of: [{type: 'imageKeyVal'}, {type: 'keyval'}]
       }
      
     ],
