@@ -57,15 +57,23 @@ handleImage(event) {
   }
 
   render() {
+    let size=20;
     const {type, value, onChange} = this.props
+    if (!(typeof(value)=='undefined' || value===null)){
+     size=value.length;
+     if (size>70){
+       size=70;
+     }
+    }
     //const {min, max, step} = type.options.range
     let {newName,newUrl}= this.state;
     console.log(">>>>> cont-! newUrl="+newUrl+" newName="+newName+" Type="+type +"value= "+value);
     return (
       <div>
-        <h2>{type.title}</h2>
+        <h4>{type.title}</h4>
         <input
           type="text"
+          size={size}
           value={value === undefined ? '' : value}
           onChange={(event)=>{ console.log("gggg-"+event.target.value); this.setState({ newUrl: event.target.value });  onChange(createPatchFrom(event.target.value))} }
           ref={element => this._inputElement = element}

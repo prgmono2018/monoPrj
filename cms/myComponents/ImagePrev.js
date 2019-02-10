@@ -43,7 +43,7 @@ componentDidMount(){
       let imagePreviewUrl = this.props.imageUrl;
       let $imagePreview = null;
       if (imagePreviewUrl) {
-        $imagePreview = (<img src={this.props.imageUrl} />);
+        $imagePreview = (<img width="600px" src={this.props.imageUrl} />);
       } else {
         $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
       }
