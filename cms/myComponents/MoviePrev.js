@@ -11,14 +11,22 @@ class MoviePrev extends React.Component {
         showComponent:false
       };
    
+      this.updateShowComponent = this.updateShowComponent.bind(this);
     }
 
     updateShowComponent()
     {
       let res=false;
+      let url=this.props.movUrl;
+
+      console.log("this.props.value="+url);
+      console.log(">>>>>1  url this.state.movUrl="+this.props.movUrl);
+      if (typeof(url)=='undefined' || url===null){
+        url='';
+      }
       this.state.fileType.forEach(function(value) {
       //console.log(value);
-      if (this.props.movUrl.toLowerCase().endsWith(value)){
+      if (url.toLowerCase().endsWith(value)){
         res=true;
       }
     }.bind(this));
@@ -26,7 +34,7 @@ class MoviePrev extends React.Component {
     }
     render() {
         return (
-          <div>
+          <div style={{display: this.updateShowComponent() ? 'block' : 'none' }}>
           <ReactPlayer
             url={this.props.movUrl}
             className='react-player'

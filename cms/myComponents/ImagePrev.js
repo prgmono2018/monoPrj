@@ -12,16 +12,21 @@ class ImagePrev extends React.Component {
         showComponent:false
       };
      // this.updateShowComponent();
-      //this.updateShowComponent = this.updateShowComponent.bind(this);
+      this.updateShowComponent = this.updateShowComponent.bind(this);
     }
 
     updateShowComponent()
     {
       let res=false;
+      let url=this.props.imageUrl
+      if (typeof(url)=='undefined' || url===null){
+        url='';
+      }
       this.state.fileType.forEach(function(value) {
       //console.log(value);
-      console.log("this.props.imageUrl="+this.props.imageUrl);
-      if (this.props.imageUrl.toLowerCase().endsWith(value)){
+      //console.log("this.props.imageUrl="+this.props.imageUrl);
+      //console.log(">>>>>1  url this.state.imagePreviewUrl="+this.props.imageUrl);
+      if (url.toLowerCase().endsWith(value)){
         res=true;
       }
     }.bind(this));
@@ -29,7 +34,7 @@ class ImagePrev extends React.Component {
     }
     
 componentDidMount(){
-  console.log("kkk");
+  //console.log(">>>>> this.state.imagePreviewUrl="+this.state.imagePreviewUrl);
   this.updateShowComponent();
 }
 

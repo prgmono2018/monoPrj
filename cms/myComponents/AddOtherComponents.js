@@ -43,6 +43,7 @@ class AddOtherComponents extends Component {
       }
     render() {
     let {newName,newUrl}= this.state;
+    console.log(">>>>> newUrl="+newUrl+" newName="+newName);
       return (
       <div>
       

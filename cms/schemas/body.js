@@ -11,7 +11,7 @@ export default {
         title: 'Please add components to the body',
         name: 'bodyObjects',
         type: 'array',
-        of: [{type: 'imageKeyVal'}]
+        of: [{type: 'keyval'}]
       }
      
     ],
