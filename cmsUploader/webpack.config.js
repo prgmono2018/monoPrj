@@ -1,6 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
   module: {
+    
     rules: [
       {
         test: /\.(js|jsx)$/,
@@ -23,6 +24,8 @@ module.exports = {
   },
   node: {
     fs: 'empty'
+  },devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebPackPlugin({

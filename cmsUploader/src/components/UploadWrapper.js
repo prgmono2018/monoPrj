@@ -4,12 +4,19 @@ import '../css/wrapper.css';
 import UploaderPanel from './uploaders/UploaderPanel'
 import sendToS3 from './uploaders/sendFileToS3'
 import axios from 'axios';
+import ErrorPage from './pages/ErrorPage';
+import UploadDone from './pages/UploadDone';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 class UploadWrapper extends Component {
 
   render() {
     var myFiles=[];
     return (
-
+      <div>
+      <Router>
+               <Route path='/done' component={UploadDone} />
+      </Router>
+      <h1>File Upload</h1>
       <UploaderPanel
         sizes="(min-width: 1000px) 50vw, 100vw"
         tab='url'
@@ -58,7 +65,9 @@ class UploadWrapper extends Component {
              // your action on error success
               console.log(error);
           });
-          window.location.reload();
+          //window.location.reload();
+
+          window.open("/done");
         }
     
       
@@ -73,6 +82,7 @@ class UploadWrapper extends Component {
         }}
         
         />
+        </div>
     );
   }
 }
