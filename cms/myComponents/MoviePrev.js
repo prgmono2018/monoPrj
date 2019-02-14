@@ -18,7 +18,7 @@ class MoviePrev extends React.Component {
     {
       let res=false;
       let url=this.props.movUrl;
-
+      //console.log("movvvvvvvvvvvvvvv=>"+url)
       //console.log("this.props.value="+url);
       //console.log(">>>>>1  url this.state.movUrl="+this.props.movUrl);
       if (typeof(url)=='undefined' || url===null){

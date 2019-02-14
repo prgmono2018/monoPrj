@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const webpack = require( 'webpack' );
 module.exports = {
   module: {
     
@@ -32,7 +33,11 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html"
     }),
-   
+    new webpack.DefinePlugin({
+      MODE_ENV: JSON.stringify('dev'),
+      FILE_SAVE_PORT: 8000,
+      FILE_SAVE_ADDRESS: JSON.stringify('localhost')
+  })
   ],
   
 };

@@ -7,12 +7,26 @@ import axios from 'axios';
 import ErrorPage from './pages/ErrorPage';
 import UploadDone from './pages/UploadDone';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-class UploadWrapper extends Component {
+import { Redirect } from 'react-router-dom';
 
+class UploadWrapper extends Component {
+  constructor() {
+    super();
+    this.state = {
+      redir: false
+    };
+ 
+  }
   render() {
     var myFiles=[];
+    console.log(`Your port is ${FILE_SAVE_PORT}`); // 8626
+    let { redir } = this.state;
     return (
+ 
       <div>
+          {redir ? <Redirect to="/ErrorPage" /> : ''}
+          {redir ? 'true' : 'false'}
+         
       <Router>
                <Route path='/done' component={UploadDone} />
       </Router>
@@ -24,7 +38,7 @@ class UploadWrapper extends Component {
         onOpen={panel => console.log('Panel opened', panel)}
         onDone={files => {
           console.log('>> Files choosed', files)
-          
+     
           files.map(file => {
             console.log('>> File changed: ', file)
 
@@ -53,7 +67,7 @@ class UploadWrapper extends Component {
           };
           
           axios({
-            url: 'http://localhost:8000/uploadToS3',
+            url: `http://${FILE_SAVE_ADDRESS}:${FILE_SAVE_PORT}/uploadToS3`,
             method: 'post',
             data: payload
           })
@@ -61,20 +75,17 @@ class UploadWrapper extends Component {
               // your action after success
               console.log(response);
           })
-          .catch(function (error) {
+          .catch( (error) =>{
              // your action on error success
               console.log(error);
+              this.setState({ redir: true});
           });
           //window.location.reload();
-
-          window.open("/done");
         }
-    
-      
+
       } 
         onChange={(file) => {
           console.log('File changed: ', file)
-    
           if (file) {
             file.progress(info => console.log('File progress: ', info.progress))
             file.done(info => console.log('File uploaded: ', info))

@@ -17,8 +17,10 @@ class ImagePrev extends React.Component {
 
     updateShowComponent()
     {
+
       let res=false;
       let url=this.props.imageUrl
+      //console.log("imgggggg=>"+url)
       if (typeof(url)=='undefined' || url===null){
         url='';
       }
