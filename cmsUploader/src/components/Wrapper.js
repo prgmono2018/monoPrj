@@ -3,12 +3,7 @@ import { connect } from 'react-redux';
 import '../css/wrapper.css';
 import * as configSelector from '../js/reducers/cmsReducer';
 import {getItems} from "../js/actions/index";
-import {GET_ALL_ITEMS} from "../js/constants/action-types";
-import { bindActionCreators } from 'redux';
-//import ToggleMounting from './components/ToggleMounting'
-//import Uploader from './components/Uploader'
 import UploaderPanel from './uploaders/UploaderPanel'
-import sendToS3 from './uploaders/sendFileToS3'
 class Wrapper extends Component {
 
     componentDidMount(){

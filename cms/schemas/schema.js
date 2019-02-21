@@ -7,7 +7,7 @@ import MyCustomStringInput from '../myComponents/VidImageView'
 
 import lobby from './lobby'
 import wrapper from './wrapper'
-import oneObject from './oneObject'
+import app from './app'
 import splashScreen from './splashScreen'
 import video from './video';
 import components from './components';
@@ -17,7 +17,7 @@ import header from './header';
 import footer from './footer';
 import body from './body';
 import imageKeyVal from './imageKeyVal';
-
+import generalComponent from './generalContainer'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -31,7 +31,6 @@ export default createSchema({
    // person,
    lobby,
    wrapper,
-   oneObject,
    splashScreen,
    video,
    components,
@@ -41,7 +40,8 @@ export default createSchema({
    footer,
    body,
    imageKeyVal,
-  
+   generalComponent,
+   app
    // screening,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
