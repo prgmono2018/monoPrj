@@ -4,7 +4,7 @@ export default {
   
     name: 'application',
     title: 'Application',
-    type: 'document',
+    type: 'object',
     fields: [
       {
         name: 'applicationName',

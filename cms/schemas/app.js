@@ -3,7 +3,7 @@ import MyCustomStringInput from '../myComponents/VidImageView'
 export default {
   
     name: 'app',
-    title: 'App',
+    title: 'Application',
     type: 'document',
     fields: [
         {
