@@ -118,8 +118,6 @@ handleImage(event) {
        size=70;
      }
     }
-    //const {min, max, step} = type.options.range
-    let {newName,newUrl}= this.state;
     //console.log(">>>>> cont-! newUrl="+newUrl+" newName="+newName+" Type="+type +"value= "+value);
     if (!showSpinner){
     return (
