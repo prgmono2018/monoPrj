@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import '../css/wrapper.css';
+
 import * as configSelector from '../js/reducers/cmsReducer';
 import {getItems} from "../js/actions/index";
 import UploaderPanel from './uploaders/UploaderPanel'
+import ImageAnimation from './ImageAnimation'
+import {Container,Image} from './spriteRender/spriteConsts'
+import SpriteRenderer from './spriteRender/SpriteRenderer'
+import { SSL_OP_PKCS1_CHECK_1 } from 'constants';
+import sideAnimation from "./images/sprite/sp4.png";
+import Spritesheet from 'react-responsive-spritesheet';
+
 class Wrapper extends Component {
 
     componentDidMount(){
@@ -29,9 +36,13 @@ class Wrapper extends Component {
   }
 
   render() {
-   
+   //const images=[require('./images/1.jpg'),require('./images/1.png'),require('./images/2.jpg'),require('./images/2.png'),require('./images/4.png')]
+   const images=['./images/1.jpg','./images/1.png','./images/2.jpg','./images/2.png','./images/4.png'];
+   const imgPath='./images/sprite/sp1.png';
+
+  const imgSrc=require(`${imgPath}`)
     return (
-      <div>>
+    /*  <div>
       <h2>Where are my topics? 55{this.props.getAllConfig}55666{this.props.getOneConfig}666</h2>
       <div style={{max: '1200px'}}>
       <UploaderPanel
@@ -48,13 +59,7 @@ class Wrapper extends Component {
             if (file) {
               
               file.progress((info)=>{ console.log('>> File progress: ', info.progress+"777="+info.incompleteFileInfo.originalUrl)
-             /* var fs = require('fs');
-              fs.writeFile('m111.jpg', info.incompleteFileInfo.sourceInfo.file, function (err) {
-                if (err) throw err;
-                console.log('Replaced!');
-              });*/
-              //sendToS3(info.incompleteFileInfo.sourceInfo.file);
-            
+           
             })
               
               file.done(info => console.log('>> File uploaded: ', info))
@@ -72,8 +77,38 @@ class Wrapper extends Component {
         
         />
     </div>
-    </div>
+     <ImageAnimation/>
+        <SpriteRenderer
+    src={sideAnimation}
+    states={4}
+    tile={{ width: 271, height: 320 }}
+    scale={2}
+    framesPerStep={8}
+  />
+    </div>*/
+    <div>
+    <ImageAnimation images={images}/>
+    <Spritesheet
+        image={imgSrc}
+        widthFrame={256}
+        heightFrame={256}
+        steps={6}
+        fps={12}
+        loop={true}
+      />
+ 
+ <SpriteRenderer
+    src={imgSrc}
+    states={6}
+    tile={{ width: 256, height: 256 }}
+    scale={1}
+    framesPerStep={8}
+  />
+
+   </div>
+
     );
+
   }
 }
 // which props do we want to inject, given the global store state?

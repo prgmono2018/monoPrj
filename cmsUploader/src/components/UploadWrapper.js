@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import '../css/wrapper.css';
 import UploaderPanel from './uploaders/UploaderPanel'
 import sendToS3 from './uploaders/sendFileToS3'
 import axios from 'axios';
@@ -8,6 +7,7 @@ import ErrorPage from './pages/ErrorPage';
 import UploadDone from './pages/UploadDone';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
+import ImageAnimation from './ImageAnimation'
 
 class UploadWrapper extends Component {
   constructor() {
@@ -93,6 +93,7 @@ class UploadWrapper extends Component {
         }}
         
         />
+    
         </div>
     );
   }

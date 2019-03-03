@@ -3,6 +3,7 @@ import Wrapper from './Wrapper';
 import UploadWrapper from './UploadWrapper';
 import ErrorPage from './pages/ErrorPage';
 import UploadDone from './pages/UploadDone';
+//import Anim from './Anim';
 //import './App.css';
 //import * as reducers from '../js/reducers';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
