@@ -1,4 +1,5 @@
 import { isString } from 'underscore';
+import * as myData from 'editor/editorCustomData'
 var $ = require('jQuery');
 var ComponentView = require('../ComponentView');
 
@@ -93,6 +94,8 @@ module.exports = ComponentView.extend({
   saveImage(el) {
     let name=$(".gjs-am-asset-image.gjs-am-highlight .gjs-am-meta .gjs-am-name").html();
     el.attr("name",name);
+    myData.pushData({name:name,bla:"ddd"});
+    //myData.saveDataToFile(myData.getData());
   },
 
   render() {

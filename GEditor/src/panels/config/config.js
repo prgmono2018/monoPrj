@@ -8,6 +8,7 @@ var ola = 'open-layers';
 var obl = 'open-blocks';
 var ful = 'fullscreen';
 var prv = 'preview';
+var saveTemplate = 'saveTemplate';
 
 module.exports = {
   stylePrefix: 'pn-',
@@ -21,6 +22,13 @@ module.exports = {
     {
       id: 'options',
       buttons: [
+        {
+          id: saveTemplate,
+          className: 'fa fa-floppy-o',
+          command: saveTemplate,
+          context: saveTemplate,
+          attributes: { title: 'Save Template' }
+        },
         {
           active: true,
           id: swv,
