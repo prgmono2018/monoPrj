@@ -1,8 +1,14 @@
 import data from 'editor/editorCustomData'
-
+var $ = require('jQuery');
+//const fs = require('fs');
+//import fs from 'fs'; 
 module.exports = {
 
     run(editor, sender) {
+      sender.set('active', false);
+      data.saveDataToFile();
+
+
   /*    const bm = editor.BlockManager;
       const pn = editor.Panels;
   
@@ -17,13 +23,17 @@ module.exports = {
       }
   alert
       this.blocks.style.display = 'block';*/
-      var html=editor.getHtml() ;
-        alert(data.getData())
+      //var html=editor.getHtml() ;
+        //alert("tmp="+data.getData()+"localStorage.getData="+localStorage.setItem('myData',data.getData()));
+       // localStorage.setItem('myData', data.getData());
+       // const blocks = this.blocks;
+       // blocks && (blocks.style.display = 'none');
     },
   
-    stop() {
-    /*  const blocks = this.blocks;
-      blocks && (blocks.style.display = 'none');*/
-    }
+/*    stop() {
+      const blocks = this.blocks;
+      blocks && (blocks.style.display = 'none');
+      alert("bbb")
+    }*/
   };
   

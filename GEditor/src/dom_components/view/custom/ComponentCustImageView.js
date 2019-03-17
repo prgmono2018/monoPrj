@@ -2,7 +2,9 @@ import { isString } from 'underscore';
 import * as myData from 'editor/editorCustomData'
 var $ = require('jQuery');
 var ComponentView = require('../ComponentView');
-
+import * as bk from 'bk/test'
+//import * as fs from 'fs';
+//var fs = require("fs");
 module.exports = ComponentView.extend({
   tagName: 'img',
 
@@ -94,9 +96,11 @@ module.exports = ComponentView.extend({
   saveImage(el) {
     let name=$(".gjs-am-asset-image.gjs-am-highlight .gjs-am-meta .gjs-am-name").html();
     el.attr("name",name);
-    myData.pushData({name:name,bla:"ddd"});
-    //myData.saveDataToFile(myData.getData());
+    myData.pushDataToActualTelmplate({type:'image',name:name});
+    //bk.saveData(myData.getData());
+   
   },
+    
 
   render() {
     this.renderAttributes();

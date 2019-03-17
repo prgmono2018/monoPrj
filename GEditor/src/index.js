@@ -8,6 +8,8 @@ polyfills();
 
 module.exports = (() => {
   var images=[];
+
+
   const plugins = new PluginManager();
   const editors = [];
   const defaultConfig = {
