@@ -1,0 +1,10 @@
+.customBody{
+    height: 450px;
+}
+.previewComponent {
+    position: relative;
+    top: 100px;
+}
+.bodyContentChange{
+    width: 631px !important;
+}

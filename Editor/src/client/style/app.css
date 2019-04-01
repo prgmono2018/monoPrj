@@ -1,0 +1,48 @@
+h1 {
+  color: green;
+}
+
+body {
+  text-align: center;
+  margin: auto;
+}
+.canvasContainer{
+  width:80%;
+  height: 500px;
+}
+.rightContainer{
+  width:20%;
+  height: 500px;
+  float:left;
+  background:#e0e0e0!important;
+}
+.itemContainer{
+  width: 30px;
+  height: 30px;
+  padding-right: 28px;
+  padding-left: 28px;
+  padding-bottom: 2px;
+  padding-top: 5px;
+  color: black;
+}
+.canvasWrapper{
+  width:80%;
+  float: left;
+}
+.navbar{
+       margin-bottom: 0px!important;
+}
+.innerRightContainer{
+  padding :20px;
+}
+.topFileMenu a{
+  font-size: 19px;
+  color: black;
+}
+
+.navbar-brand{
+  font-size:  22px !important;
+}
+.bg-light {
+  background-color: #e1e1e1!important;
+}

@@ -1,46 +1,47 @@
 //Saves the editor data
 //const fs = require('fs');
-var templateNames= localStorage.getItem('templateNames');
-var Template = require('./Template.js');
-var actualTemplate=getTemplate('');
-//var actualTemplateName='newTemplate';
-
-
-function getTemplate(name){
-   if (templateNames==null || name==""){
-      return new Template.Template('newTemplate');
-   }
-   templateNames.forEach(function(element) {
-      if (element.name==name){
-         //actualTemplateName=element.name;
-         return element;
-      }
-    });
-   // actualTemplateName="newTemplate";
-    
-}
+import App from './saveTemplate' 
+import * as data from 'editor/saveTemplate'
 
 function pushDataToActualTelmplate (obj) {
-   actualTemplate.pushData(obj);
+   data.actualTemplate.pushData(obj);
 }
 
 function saveDataToFile(){
-   localStorage.setItem(actualTemplate.getName(),actualTemplate);
-   if (templateNames==null){
-      templateNames=[];
+   localStorage.setItem( data.actualTemplate.getName(), data.actualTemplate);
+   if ( data.templateNames==null){
+      data.templateNames=[];
    }
-   templateNames.push(actualTemplate.getName());
-   localStorage.setItem('templateNames',templateNames);
+
+   data.templateNames.push( data.actualTemplate.getName());
+   localStorage.setItem('templateNames', data.templateNames);
 }
 
 function addNewTemplate(template){
    templateName=template.getName();
-   localStorage.setItem(templateName,actualTemplate);
-   templateNames.push(templateName);
-   localStorage.setItem("templateNames",templateNames);
+   localStorage.setItem(templateName, data.actualTemplate);
+   data.templateNames.push(templateName);
+   localStorage.setItem("templateNames", data.templateNames);
 }
 
-module.exports.getTemplate = getTemplate;  
+function buildTemplateSelectBox(template){
+  /* var select='<label for="sel1">Select list:</label><select onchange=onChangeSelect() class="form-control" id="templatesSelect">';
+   if (templateNames.length>0){
+   templateNames.forEach(function(element) {
+      select=select+ '<option>'+element+'</option>';
+   });
+   
+}
+return select+'<option>New Template</option></select>';*/
+ return new App.App();
+}
+
+function onChangeSelect(){
+  alert("jjj")
+
+}
+
 module.exports.pushDataToActualTelmplate = pushDataToActualTelmplate;  
 module.exports.saveDataToFile = saveDataToFile; 
 module.exports.addNewTemplate = addNewTemplate;   
+module.exports.buildTemplateSelectBox = buildTemplateSelectBox;  
