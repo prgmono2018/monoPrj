@@ -28,7 +28,7 @@ class Canvas extends React.Component {
 
       }
        componentDidMount() {
-  
+        console.log("canvas did mount");
       }
 
     render() {

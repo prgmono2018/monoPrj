@@ -14,7 +14,10 @@ export default class TemplateOrganizer extends Component {
     this.makeNewTemplate=this.makeNewTemplate.bind(this);
     this.handleChange=this.handleChange.bind(this);
   }
-
+ componentDidMount() {
+    console.log("New template org did mount");
+      
+  }
   handleChange(event) {
     this.setState({templateName: event.target.value});
   }

@@ -10,11 +10,11 @@ export default class TemplateOrganizer extends Component {
     super(props);
        this.state = {
        allTemplates:"",
-       newTemplateInput:props.showNewTemplate,
+       showSelectTemplate:props.showSelect,
      };
    
 this.getTemplateList=this.getTemplateList.bind(this);
-this.NewTemplate=this.NewTemplate.bind(this);
+//this.NewTemplate=this.NewTemplate.bind(this);
   }
 
 getTemplateList(){
@@ -51,18 +51,19 @@ getTemplateList(){
       this.getTemplateList();
   }
 
- 
+ /*
   NewTemplate(e){
     console.log(e)
-    this.setState({newTemplateInput:!this.state.newTemplateInput});
+    this.setState({showSelectTemplate:!this.props.showSelect});
 
-  }
+  }*/
   render() {
 
+    const show=this.props.showSelect;
   const templates=this.state.allTemplates;
     return (
             <div>
-               <div className={(!this.state.newTemplateInput)?'showElement':'hideElement'}>
+               <div className={show?'showElement':'hideElement'}>
                     <select className="form-control">
           
                     {
@@ -77,7 +78,7 @@ getTemplateList(){
                     <button   type="button" onClick={this.NewTemplate} className="btn btn-primary">Make New Template</button>
                 </div>
                
-                <NewTemplate visible={this.state.newTemplateInput} close={this.props.close}/>
+                <NewTemplate visible={!show} close={this.props.close}/>
             </div> 
            
  

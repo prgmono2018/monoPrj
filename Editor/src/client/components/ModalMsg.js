@@ -9,8 +9,8 @@ export default class ModalMsg extends Component {
   constructor(props) {
     super(props);
        this.state = {
-       visible:props.visible,
-       compVisible:props.showNewTemplate,
+       visible:props.visible, //Open the modeal
+       //showSelect:props.showSelectTemplate, //show new Template mode or select template
        component:props.component,
        templates:[]
      };
@@ -23,7 +23,7 @@ export default class ModalMsg extends Component {
 
   showComponent(Component){
 
-    return  <Component pushToActualemplate={this.props.pushToActualemplate } setActualemplate={this.props.setActualemplate} visible={this.state.compVisible} modal={this.modalButton} close={this.closeButton}/>;
+    return  <Component  showSelect={this.props.showSelectTemplate} visible={this.state.visible} modal={this.modalButton} close={this.closeButton}/>;
 
 } 
   
@@ -36,6 +36,7 @@ export default class ModalMsg extends Component {
    }
 
   componentDidMount(){
+    console.log("modalMsg did mount");
     if (this.state.visible){
 
       this.modalButton.click();

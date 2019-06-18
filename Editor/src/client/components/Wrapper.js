@@ -15,8 +15,8 @@ export default class Wrapper extends Component {
        this.state = {
        showTemplateModal:true,
        imageSelector:'hideElement',
-       showNewTemplate:true,
-       actualTemplate: templates.getActualTemplate()
+       actualTemplate: templates.getActualTemplate(),
+       showSelectTemplate:true
      };
       //this.actualTemplate=[];
 
@@ -30,14 +30,11 @@ export default class Wrapper extends Component {
   }
 
 showTemplateModalSave(){
-  console.log("hh")
-this.setState({showNewTemplate:false});
-this.modalRefTemplate.current.modalButton.click();
-
-
+  
+this.setState({showSelectTemplate:false},()=>{this.modalRefTemplate.current.modalButton.click()});
 }
   componentDidMount() {
-       console.log("TopPannel did mount");
+       console.log("Wapper did mount");
   }
 
 
@@ -51,11 +48,11 @@ this.modalRefTemplate.current.modalButton.click();
             <div>
             <TopPannel showModal={this.showTemplateModalSave}/>
             </div>
-            <ModalMsg showNewTemplate={this.state.showNewTemplate} visible={this.state.showTemplateModal} fakeId="chooseTemplate" title="Please choose template" ref={this.modalRefTemplate} component={TemplateOrganizer} getActualemplate={templates.getActualTemplate}  setActualemplate={templates.setActualTemplate} pushToActualemplate={templates.pushToActualTemplate}/>
+            <ModalMsg showSelectTemplate={this.state.showSelectTemplate} visible={this.state.showTemplateModal} fakeId="chooseTemplate" title="Please choose template" ref={this.modalRefTemplate} component={TemplateOrganizer}/>
             <div className="canvasPanelCont">
                <Canvas modalRef={this.modalRefImage} getActualemplate={this.getActualemplate } pushToActualemplate={this.pushToActualemplate } setActualemplate={this.setActualemplate}/><RightPannel/>
             </div> 
-            <ModalMsg fakeId="chooseImage" title="Please choose image" ref={this.modalRefImage} visible={false} component={ImageUpload} getActualemplate={templates.getActualTemplate}  setActualemplate={templates.setActualTemplate} pushToActualemplate={templates.pushToActualTemplate}/>
+            <ModalMsg fakeId="chooseImage" title="Please choose image" ref={this.modalRefImage} visible={false} component={ImageUpload} />
       </div>
    
     );
