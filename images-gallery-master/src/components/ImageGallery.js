@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import * as _ from 'lodash';
 import axios from 'axios';
 import config from '../config';
-import data from '../assets/data';
 import Image from './Image';
 
 
 class ImageGallery extends Component {
     constructor(props) {
-   
         super(props);
-        this.state = { data :null, delete:null,refresh:false};
-        this.server="http://localhost:8000/";
+        require('dotenv').config();
+        this.state = { data :null, delete:null,refresh:true};
+        this.server=process.env.REACT_APP_SERVER;
         this.handleChangePicture=this.handleChangePicture.bind(this);
         this.getListFromServer=this.getListFromServer.bind(this);
+        this.switchFile=this.switchFile.bind(this);
     }
 
     /**
@@ -30,26 +30,26 @@ class ImageGallery extends Component {
             let data = new FormData();
             data.append('file', target.files[0]);
             data.append('delete', this.state.delete);
-            this.switchFile(data,this);
+            this.switchFile(data);
          
         };
        
     };
 
- switchFile=async (data,param)=>{
+ switchFile=async (data)=>{
      try{
             let res=  await axios.post(process.env.REACT_APP_SWITCH_FILE, data);
             if (res.status==200){
-            console.log("success:"+res);
-            param.setState({refresh:true});
-            console.log("set refresh to true");
+                //console.log("success:"+res);
+                this.setState({refresh:true});
+                //console.log("set refresh to true");
             }
             else{
-                console.log("failed:"+res);
+                console.log("Failed:"+res);
             }
      }catch(e)
      {
-        console.log("failed:"+e);
+        console.log("Failed:"+e);
      }
 
 
@@ -63,42 +63,33 @@ class ImageGallery extends Component {
 componentDidUpdate=()=>  { 
 
     if (this.state.refresh===true){
-        console.log(">> in if componentDidUpdate");
+        //console.log(">> in if componentDidUpdate");
         this.getListFromServer();
         this.setState({refresh: false});
       }
 }
 getListFromServer=()=>{
-   
-    axios.get(process.env.REACT_APP_PICLIST)
+    var config = {
+        headers: { 'Access-Control-Allow-Origin': '*' },
+      };
+    axios.get(process.env.REACT_APP_PICLIST,config)
     .then(
      
                 json => {
-                    console.log(json);
+                    //console.log(json);
                     this.setState({data:json});
-                    data.append('file', this.state.jsonObj);
-                    axios.post('http://localhost:8000/saveImage', data)
-                    .then(function (response) {
-                    //handle success
-                    console.log(response);
-                   
-            })
-            .catch(function (response) {
-                //handle error
-                console.log(response);
-            });
-                
+   
                 }
     ).catch(error => {
-       
+       console.log("Error"+error)
       })
 
 
 }
 
-    componentWillMount=()=>console.log("componentWillMount");
+    //componentWillMount=()=>console.log("componentWillMount");
     componentDidMount=()=>{
-        console.log(">> componentDidMount="+this.state.refresh);
+        //console.log(">> componentDidMount="+this.state.refresh);
         this.getListFromServer();
      
 
@@ -141,7 +132,7 @@ renderResource=()=>{
  
 }
     render() {
-        //console.log("kk="+this.state.data);
+        
         this.renderResource();
         return <div className="row">
             {this.state.data ? this.renderImages(this.state.data, []) :
