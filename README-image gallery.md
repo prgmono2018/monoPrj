@@ -10,5 +10,5 @@ This project consists on two projects:
 
 Run the project:
 
-- Run the server- enter to galleryServer and run: node  dist/index.js
-- Run the client enter to images-gallery-master and run: npm start
+- Run the server- enter to galleryServer and run: node  dist/index.js - The server will run at port 8000
+- Run the client enter to images-gallery-master and run: npm start -The client runs on port 3000 - http://localhost:30000
