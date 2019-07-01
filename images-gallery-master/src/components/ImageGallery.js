@@ -8,9 +8,8 @@ import Image from './Image';
 class ImageGallery extends Component {
     constructor(props) {
         super(props);
-        require('dotenv').config();
         this.state = { data :null, delete:null,refresh:true};
-        this.server=process.env.REACT_APP_SERVER;
+        this.server=process.env.BACKEND_SERVER;
         this.handleChangePicture=this.handleChangePicture.bind(this);
         this.getListFromServer=this.getListFromServer.bind(this);
         this.switchFile=this.switchFile.bind(this);
