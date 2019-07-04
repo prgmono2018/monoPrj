@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>My React Game Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <script src="src/swiper/jquery-3.3.1.min.js.download"></script>
+    <link rel="stylesheet" href="src/style/jquery.fancybox.min.css">
+    <script src="src/swiper/jquery.fancybox.min.js.download"></script>
+    
+    <!-- Link Swiper's CSS 
+    <link rel="stylesheet" href="../dist/css/swiper.min.css">
+    -->
+    <link rel="stylesheet" href="src/style/swiper.css">
+    
+  
+    <!-- Demo styles -->
+    <style>
+      html, body {
+        position: relative;
+        height: 100%;
+      background-color: transparent;
+      }
+      body {
+        background-color: transparent;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+      }
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: ComingSoonIconpx;
+        background: #fff;
+  
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body class="">
+  
+      <!-- Swiper -->
+      <div class="swiper-container swiper-container-horizontal swiper-container-free-mode">
+        <div id="root" class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+        </div>
+ 
+     
+      
+      <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+        <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+     
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets" style="background-color: transparent;"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 7"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 8"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 9"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 10"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 11"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 12"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 13"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 14"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 15"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 16"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 17"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 18"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 19"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 20"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 21"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 22"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 23"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 24"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 25"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 26"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 27"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 28"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 29"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 30"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 31"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 32"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 33"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 34"></span></div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    
+      <!-- Swiper JS -->
+      <script src="src/swiper/swiper.min.js.download"></script>
+    
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper('.swiper-container', {
+          slidesPerView: 4,
+          spaceBetween: 60,
+          freeMode: true,
+        
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      </script>
+    
+
+    <script src="./dist/bundle.js"></script>
+  </body>
+</html>
