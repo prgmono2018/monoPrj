@@ -7,13 +7,27 @@ export default class GameManager extends Component {
     constructor(props){
         super(props);
         this.state = {
-       
             gameData:[]
           };
+          this.createTable=this.createTable.bind(this);
       }
-
+componentDidUpdate(){
+  window.dispatchEvent(new Event('resize'));
+}
 componentDidMount(){
     this.getGameList();
+ 
+}
+
+createTable() {
+  let table = []
+
+  // Outer loop to create parent
+  for (let i = 0; i <this.state.gameData.length; i=i+2) {
+    
+    table.push(<TwoIconSec items={[this.state.gameData[i],this.state.gameData[i+1]]} key={i} />)
+  }
+  return table
 }
      getGameList(){
 
@@ -50,15 +64,31 @@ componentDidMount(){
     render () {
       console.log("render="+this.state.gameData)
      var thiss=this;
-      return (
-        <div>
+   /*   return (
+        <>
 
             {
-              this.state.gameData.map(function(object, i=i+2){
+              this.state.gameData.map(function(object,i){
+                console.log("i="+i);
+                if (i%2!=0 || i==0){
                   return <TwoIconSec items={[thiss.state.gameData[i],thiss.state.gameData[i+1]]} key={i} />;
+                } 
+         
+           
             })
             }
-        </div>
+        </>
+);*/
+
+return (
+  <>
+
+     
+  {
+  this.createTable()
+   }
+      
+  </>
 );
 
 

@@ -12,7 +12,11 @@
     "include": [
       "src/**/*.ts"
     ],
+    "watch": [
+      "src"
+      ],
     "exclude": [
       "node_modules"
-    ]
+    ],
+    
   }

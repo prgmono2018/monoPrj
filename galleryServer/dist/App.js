@@ -17,7 +17,7 @@ var App = /** @class */ (function () {
         var router = express.Router();
         router.get('/', function (req, res) {
             res.json({
-                message: "hello"
+                message: "hello baa"
             });
         });
         router.get('/gameList', cors(), function (req, res) {

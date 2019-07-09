@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>My React Game Manager</title>
+    <meta charset="utf-8">
+    <title>Games</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'">
 
     <script src="src/swiper/jquery-3.3.1.min.js.download"></script>
     <link rel="stylesheet" href="src/style/jquery.fancybox.min.css">
@@ -56,22 +58,34 @@
     </style>
   </head>
   <body class="">
-  
-      <!-- Swiper -->
-      <div class="swiper-container swiper-container-horizontal swiper-container-free-mode">
-        <div id="root" class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-        </div>
- 
-     
-      
-      <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
-        <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
-     
-        <!-- Add Pagination -->
-        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets" style="background-color: transparent;"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 7"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 8"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 9"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 10"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 11"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 12"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 13"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 14"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 15"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 16"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 17"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 18"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 19"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 20"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 21"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 22"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 23"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 24"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 25"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 26"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 27"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 28"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 29"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 30"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 31"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 32"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 33"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 34"></span></div>
-      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    <script>
+      function requestFullScreen(element) {
+        // Supports most browsers and their versions.
+        var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
     
-      <!-- Swiper JS -->
+        if (requestMethod) { // Native full screen.
+          requestMethod.call(element);
+        } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+          var wscript = new ActiveXObject("WScript.Shell");
+          if (wscript !== null) {
+            wscript.SendKeys("{F11}");
+          }
+        }
+      }
+    
+      var elem = document.body; // Make the body go full screen.
+      
+    </script>
+      <!-- Swiper -->
+      <div class="swiper-container">
+        <div id="root" class="swiper-wrapper">
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      
+        <!-- Add Pagination -->
+        <div class="swiper-pagination" style="background-color: transparent;"></div>
+      </div>
       <script src="src/swiper/swiper.min.js.download"></script>
     
       <!-- Initialize Swiper -->
@@ -90,9 +104,14 @@
             prevEl: '.swiper-button-prev',
           },
         });
+
+        $( document ).ready(function() {
+          window.dispatchEvent(new Event('resize'));
+});
       </script>
     
 
     <script src="./dist/bundle.js"></script>
+    
   </body>
 </html>
