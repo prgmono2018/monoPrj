@@ -5,41 +5,30 @@ var path = require("path");
 var fs = require("fs");
 var formidable = require("formidable");
 var cors = require("cors");
+var gameController = require("./controllers/gameController");
+var bodyParser = require("body-parser");
 var App = /** @class */ (function () {
     function App() {
         this.loc = path.join(__dirname, '..', 'data');
         this.express = express();
         this.mountRoutes();
         this.initStaticFiles();
+        this.express.use(bodyParser.json());
+        //support application/x-www-form-urlencoded post data
+        this.express.use(bodyParser.urlencoded({ extended: false }));
     }
     App.prototype.mountRoutes = function () {
         var _this = this;
         var router = express.Router();
         router.get('/', function (req, res) {
             res.json({
-                message: "hello baa"
+                message: "hello!!"
             });
         });
-        router.get('/gameList', cors(), function (req, res) {
-            console.log("Get Game List");
-            var obj = [
-                { "imgSrc": "src/img/1.png", "href": "https://ronbar-poc.stagika.com/slider/swiper-master/demos/150-freemode.html", "dataFancybox": "", "dataType": "", "dataSrc": "" },
-                { "imgSrc": "src/img/2.png", "href": "https://ronbar-poc.stagika.com/slider/swiper-master/demos/150-freemode.html", "dataFancybox": "", "dataType": "", "dataSrc": "" },
-                { "imgSrc": "src/img/3.png", "href": "javascript:;", "dataFancybox": "", "dataType": "iframe", "dataSrc": "http://ikonen.me/examples/slot/" },
-                { "imgSrc": "src/img/4.png", "href": "javascript:;", "dataFancybox": "", "dataType": "iframe", "dataSrc": "http://showcase.codethislab.com/games/3d_soccer_slot/" },
-                { "imgSrc": "src/img/5.png", "href": "javascript:;", "dataFancybox": "", "dataType": "iframe", "dataSrc": "https://ronbar-poc.stagika.com/cordova_web/slot.html?game_id=10353" },
-                { "imgSrc": "src/img/6.png", "href": "javascript:;", "dataFancybox": "", "dataType": "iframe", "dataSrc": "https://juicydeli.com/slotomania_pwa/slot.html?game_id=1" },
-                { "imgSrc": "src/img/7.png", "href": "javascript:;", "dataFancybox": "", "dataType": "iframe", "dataSrc": "http://bot.playtika.com/games/ver1/sm/slotomania_pwa/index.html" },
-                { "imgSrc": "src/img/8.png", "href": "javascript:;", "dataFancybox": "", "dataType": "iframe", "dataSrc": "http://showcase.codethislab.com/games/slot_ultimate_soccer/" },
-                { "imgSrc": "src/img/9.png", "href": "javascript:;", "dataFancybox": "", "dataType": "iframe", "dataSrc": "http://showcase.codethislab.com/games/slot_mr_chicken/" },
-                { "imgSrc": "src/img/10.png", "href": "javascript:;", "dataFancybox": "", "dataType": "iframe", "dataSrc": "http://showcase.codethislab.com/games/slot_space_adventure/" },
-                { "imgSrc": "src/img/11.png", "href": "javascript:;", "dataFancybox": "", "dataType": "iframe", "dataSrc": "http://showcase.codethislab.com/games/casino_spin_and_win/" },
-                { "imgSrc": "src/img/12.png", "href": "javascript:;", "dataFancybox": "", "dataType": "iframe", "dataSrc": "http://showcase.codethislab.com/games/horse_racing/" },
-                { "imgSrc": "src/img/13.png", "href": "javascript:;", "dataFancybox": "", "dataType": "iframe", "dataSrc": "http://showcase.codethislab.com/games/roulette/" },
-                { "imgSrc": "src/img/14.png", "href": "javascript:;", "dataFancybox": "", "dataType": "iframe", "dataSrc": "http://showcase.codethislab.com/games/slot_space_adventure/" },
-            ];
-            return res.send(obj);
-        }).bind(this);
+        router.get('/gameList', cors(), gameController.allGames).bind(this);
+        router.post('/updateGame', cors(), gameController.updateGame).bind(this);
+        router.post('/addGame', cors(), gameController.addGame).bind(this);
+        router.post('/deleteGame', cors(), gameController.deleteGame).bind(this);
         router.get('/listFiles', cors(), function (req, res) {
             console.log("lost");
             //const loc:string=path.join(__dirname, '..', 'data');

@@ -20,7 +20,7 @@ export default class TwoIconSec extends Component {
         const divStyle = {
             width: '334.5px',
             marginRight: '60px',
-        float:'left',
+            float:'left',
   
           };
           

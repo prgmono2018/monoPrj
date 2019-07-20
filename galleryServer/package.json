@@ -7,12 +7,14 @@
     "start1": "tsc && node dist/index.js",
     "tsc": "tsc",
     "start": "node --inspect=5858 -r ts-node/register ./src/index.ts",
-    "start:watch": "nodemon",
-    "build": "tsc"
+    "start:watch": "tsc && nodemon",
+    "build": "tsc",
+    "dev": "ts-node-dev — respawn — transpileOnly ./src/index.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/body-parser": "^1.17.0",
     "@types/formidable": "^1.0.31",
     "@types/mongoose": "^5.5.7",
     "body-parser": "^1.19.0",

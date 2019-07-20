@@ -12,6 +12,7 @@ mongoose.connect(uri, (err: any) => {
 
 
 export interface IGame extends mongoose.Document {
+    name: string,
     imgSrc :  String;
     href : String;
     dataFancybox : String;
@@ -21,7 +22,7 @@ export interface IGame extends mongoose.Document {
 }
 
 export const GameSchema = new mongoose.Schema({
-  
+    name : { type: String, required: true },
     imgSrc : { type: String, required: true },
     href : { type: String, required: true },
     dataFancybox : { type: String, required: false },

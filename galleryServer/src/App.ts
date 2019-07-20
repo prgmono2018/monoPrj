@@ -4,6 +4,7 @@ import * as fs from 'fs';
 import * as formidable from  'formidable';
 import * as cors from  'cors';
 import * as gameController from  './controllers/gameController';
+import * as bodyParser from "body-parser";
 
 class App {
   public express
@@ -12,6 +13,10 @@ class App {
     this.express = express()
     this.mountRoutes()
     this.initStaticFiles ()
+    this.express.use(bodyParser.json());
+    //support application/x-www-form-urlencoded post data
+    this.express.use(bodyParser.urlencoded({ extended: false }));
+    
   }
 
   private mountRoutes (): void {
@@ -23,8 +28,9 @@ class App {
     })
 
     router.get('/gameList',cors(),gameController.allGames).bind(this)
-    
-
+    router.post('/updateGame',cors(),gameController.updateGame).bind(this)
+    router.post('/addGame',cors(),gameController.addGame).bind(this)
+    router.post('/deleteGame',cors(),gameController.deleteGame).bind(this)
     router.get('/listFiles',cors(), (req, res) => {
       console.log("lost")
          //const loc:string=path.join(__dirname, '..', 'data');

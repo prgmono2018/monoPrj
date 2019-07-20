@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'">
+
+
+    <link rel="stylesheet" href="src/style/jquery.fancybox.min.css">
+
+    
+    <!-- Link Swiper's CSS 
+    <link rel="stylesheet" href="../dist/css/swiper.min.css">
+    -->
+    <link rel="stylesheet" href="src/style/swiper.css">
+    
+  
+    <!-- Demo styles -->
+    <style>
+      html, body {
+        position: relative;
+        height: 100%;
+      background-color: transparent;
+      }
+      body {
+        background-color: transparent;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+      }
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: ComingSoonIconpx;
+        background: #fff;
+  
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body class="">
+    <script>
+      function requestFullScreen(element) {
+        // Supports most browsers and their versions.
+        var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+    
+        if (requestMethod) { // Native full screen.
+          requestMethod.call(element);
+        } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+          var wscript = new ActiveXObject("WScript.Shell");
+          if (wscript !== null) {
+            wscript.SendKeys("{F11}");
+          }
+        }
+      }
+    
+      var elem = document.body; // Make the body go full screen.
+      
+    </script>
+      <!-- Swiper -->
+      <div id="root" class="swiper-container">
+ 
+      </div>
+      <script src="src/swiper/swiper.min.js.download"></script>
+    
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper('.swiper-container', {
+          slidesPerView: 4,
+          spaceBetween: 60,
+          freeMode: true,
+        
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+
+
+      </script>
+    
+
+    <script src="./dist/bundle.js"></script>
+    
+  </body>
+</html>
