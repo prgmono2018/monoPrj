@@ -2,14 +2,11 @@ import { Request, Response } from "express";
 import Game from '../model/game'
 import * as formidable from  'formidable';
 import * as mongoose from "mongoose";
+import { CutomLogger } from '../custom/customlogger';
+
 
 export let allGames = (req: Request, res: Response) => {
-    console.log("Get Game List-all games")
- /*   let obj:{ imgSrc: string, href: string ,dataFancybox:string,dataType:string,dataSrc:string,index:number}[]=[
- 
-    
-  ];*/
-
+  CutomLogger.logger.log("info","Get Game List-all games");
   let games = Game.find().sort('index').exec((err: any, games: any) => {
     if (err) {
       res.send("Error!");

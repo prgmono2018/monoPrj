@@ -14,13 +14,17 @@ export default class GameManager extends Component {
             gameData:[],
             changeObject:null,
             deleteObject:null,
+            currentPage: 1,
+            gamesPerPage: 4
           };
+          
           this.deleteGame = this.deleteGame.bind(this);
           this.editGame = this.editGame.bind(this);
           this.editObj = this.editObj.bind(this);
           this.addObj = this.addObj.bind(this);
-          this.updateStateGameArr=this.updateStateGameArr.bind(this);
         this.deleteObj=this.deleteObj.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.onPageClick = this.onPageClick.bind(this);
       }
 
       componentDidUpdate(){
@@ -92,14 +96,23 @@ export default class GameManager extends Component {
                 })
 
       }
-   updateStateGameArr(obj){
-    let newState = Array.from(Object.create(this.state.gameData));
-    var foundIndex = newState.findIndex(x => x._id == obj._id);
-    newState[foundIndex] = obj;
-    this.setState({gameData:newState});
-   }
+      onPageClick(e){
+        //console.log("onPageClick")
+        let pageNum=Number(e.target.dataset.currentpage);
+        if (pageNum<0){
+          pageNum==0;
+        }
+        this.setState({
+          currentPage: Number(e.target.dataset.currentpage)
+        });
+      }
 
-
+      handleClick(event) {
+        this.setState({
+          currentPage: Number(event.target.id)
+        });
+      }
+    
 
       editObj(e,editState){
         console.log("Edit obj");
@@ -150,7 +163,7 @@ export default class GameManager extends Component {
           
           json => {
             console.log("json="+json.data);
-                this.setState({ gameData: json.data })
+                this.setState({ gameData: json.data,currentPage:1 })
                 console.log("getGameListstate"+this.state.gameData)
           }
         ).catch(error => {
@@ -172,7 +185,22 @@ export default class GameManager extends Component {
 
     render () {
       console.log("render="+this.state.gameData)
-     
+      const { gameData, currentPage, gamesPerPage } = this.state;
+      // Logic for displaying games
+      const indexOfLastGame = currentPage * gamesPerPage;
+      const indexOfFirstGame = indexOfLastGame - gamesPerPage;
+      const currentGames = gameData.slice(indexOfFirstGame, indexOfLastGame);
+      const renderGames = currentGames.map((game, index) => {
+        //return <li key={index}>{game}</li>;
+       return <OneGameDetails key={index} editGame={this.editGame} deleteGame={this.deleteGame} game={game} />;
+      });
+  
+      // Logic for displaying page numbers
+      const pageNumbers = [];
+      for (let i = 1; i <= Math.ceil(gameData.length / gamesPerPage); i++) {
+        pageNumbers.push(i);
+      }
+
       return (
         <>
         <div className="container">
@@ -185,10 +213,10 @@ export default class GameManager extends Component {
                         <div className="table-title">
                             <div className="row">
                                  <div className="col-sm-6">
-                                     <h2>Manage <b>Employees</b></h2>
+                                     <h2>Manage <b>Games</b></h2>
                                  </div>
                                 <div className="col-sm-6">
-                                    <a href="#addEmployeeModal" className="btn btn-success" data-toggle="modal"><i className="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
+                                    <a href="#addEmployeeModal" className="btn btn-success" data-toggle="modal"><i className="material-icons">&#xE147;</i> <span>Add New Game</span></a>
                                     <a href="#deleteEmployeeModal" className="btn btn-danger" data-toggle="modal"><i className="material-icons">&#xE15C;</i> <span>Delete</span></a>						
                                 </div>
                             </div>
@@ -215,20 +243,10 @@ export default class GameManager extends Component {
                 </tr>
             </thead>
             <tbody>
-                {
-            this.state.gameData.map(function(game){
-    
-                 return <OneGameDetails editGame={this.editGame} deleteGame={this.deleteGame}game={game} />;
-                }.bind(this))
-            }
+          {renderGames}
             </tbody>
         </table>
-
-
-
-
-
-			      <Pagination/>
+			      <Pagination gamesPerPage={this.state.gamesPerPage} pageNumbers={pageNumbers} currentPage={this.state.currentPage} onPageClick={this.onPageClick} pageNum={this.state.gameData.length}/>
         </div>
       </div>
       <AddGame  add={this.addObj}/>

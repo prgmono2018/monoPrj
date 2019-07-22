@@ -51,7 +51,6 @@ exports.updateGame = function (req, res) {
     //return res.json({ success: true });
 };
 exports.addGame = function (req, res) {
-    res.send("add game");
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
         var obj = {
@@ -96,7 +95,7 @@ exports.deleteGame = function (req, res) {
                 return res.send(docs);
             }
             else {
-                return res.status(500).send("Document not found");
+                return res.json({ success: false, txt: "document not found" });
             }
         }).catch(function (err) {
             console.log("error=" + err);

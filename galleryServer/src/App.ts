@@ -5,7 +5,7 @@ import * as formidable from  'formidable';
 import * as cors from  'cors';
 import * as gameController from  './controllers/gameController';
 import * as bodyParser from "body-parser";
-
+import { CutomLogger } from './custom/customlogger';
 class App {
   public express
   public loc:string=path.join(__dirname, '..', 'data');
