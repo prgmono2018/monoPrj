@@ -1,11 +1,15 @@
-import * as express from 'express'
+//import * as express from 'express'
 import * as path from 'path';
 import * as fs from 'fs';
 import * as formidable from  'formidable';
-import * as cors from  'cors';
+//import * as cors from  'cors';
+
 import * as gameController from  './controllers/gameController';
 import * as bodyParser from "body-parser";
 import { CutomLogger } from './custom/customlogger';
+
+var express= require("express");
+var cors= require("cors");
 class App {
   public express
   public loc:string=path.join(__dirname, '..', 'data');
@@ -20,6 +24,7 @@ class App {
   }
 
   private mountRoutes (): void {
+    
     const router = express.Router()
     router.get('/', (req, res) => {
       res.json({
@@ -70,7 +75,7 @@ class App {
 
 
   }).bind(this)
-  const options:cors.CorsOptions = {
+  const options = {
     allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "X-Access-Token"],
     credentials: true,
     methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",

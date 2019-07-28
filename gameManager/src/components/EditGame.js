@@ -34,12 +34,7 @@ export default class EditGame extends Component {
      }
 
      onChange (e ){this.setState({ [e.target.name]: e.target.value }); console.log(JSON.stringify(this.state))}
-componentDidUpdate(){
 
-}
-componentDidMount(){
-
-}
 componentWillReceiveProps({obj}) {
     //console.log("componentWillReceiveProps")
     let objj=obj;

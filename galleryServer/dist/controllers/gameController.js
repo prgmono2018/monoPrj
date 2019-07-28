@@ -1,14 +1,21 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var game_1 = require("../model/game");
-var formidable = require("formidable");
-var mongoose = require("mongoose");
+var game_1 = __importDefault(require("../model/game"));
+var formidable = __importStar(require("formidable"));
+var mongoose = __importStar(require("mongoose"));
+var customlogger_1 = require("../custom/customlogger");
 exports.allGames = function (req, res) {
-    console.log("Get Game List-all games");
-    /*   let obj:{ imgSrc: string, href: string ,dataFancybox:string,dataType:string,dataSrc:string,index:number}[]=[
-    
-       
-     ];*/
+    customlogger_1.CutomLogger.logger.log("info", "Get Game List-all games");
     var games = game_1.default.find().sort('index').exec(function (err, games) {
         if (err) {
             res.send("Error!");

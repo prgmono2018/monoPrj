@@ -1,12 +1,21 @@
 "use strict";
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+//import * as express from 'express'
+var path = __importStar(require("path"));
+var fs = __importStar(require("fs"));
+var formidable = __importStar(require("formidable"));
+//import * as cors from  'cors';
+var gameController = __importStar(require("./controllers/gameController"));
+var bodyParser = __importStar(require("body-parser"));
 var express = require("express");
-var path = require("path");
-var fs = require("fs");
-var formidable = require("formidable");
 var cors = require("cors");
-var gameController = require("./controllers/gameController");
-var bodyParser = require("body-parser");
 var App = /** @class */ (function () {
     function App() {
         this.loc = path.join(__dirname, '..', 'data');
