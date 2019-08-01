@@ -1,0 +1,197 @@
+
+input,
+button {
+    padding: 0.5em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+#loading-div {
+    text-align: center;    
+    background-color: #fff568;
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+#loading-div p {
+    line-height: 4em;
+    font-weight: bold;
+}
+
+.member-help {
+    color: darkgreen;
+    font-family: monospace;
+}
+
+.member-name {
+    font-family: monospace;
+}
+
+.param-table {
+    border-spacing: 0px;
+    border-collapse: collapse;
+    font-family: monospace;
+}
+
+.param-table td,
+.param-table th {
+    padding: 0.5em;
+    border: 1px solid rgba(0, 0, 255, 0.15);
+}
+
+.selected {
+    background: rgba(0, 0, 255, 0.15);
+}
+
+.highlight,
+.highlight-example {
+    padding: 2px;
+    border: 1px solid rgba(255, 0, 0, 0.1);
+    background: rgba(255, 235, 0, 0.17);
+}
+
+.highlight-example {
+    background: rgba(0, 200, 0, 0.07);
+}
+
+.link {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+.raw-link {
+    display: inline-block;
+    padding: 0.5em;
+}
+
+#result_count {
+    font-size: small;
+    padding: 0.5em;
+}
+
+#loading {
+    color: white;
+    background: #cc2b2b;
+    padding: 0.5em;
+    padding-top: 1.5em;
+    display: block;
+    width: 20em;
+    text-align: center;
+    margin-top: -1em;
+}
+
+#top-panel {
+    background: #E0E4F1;
+    padding: 0px 0px 1px 0px;
+}
+
+#container {
+    margin: 0px;
+    padding: 0px;
+}
+
+#center-panel {}
+
+.section-title {
+    color: #6f7079;
+    margin: 0px;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    display: inline-block;
+    font-size: small;
+}
+
+#bookmarks {}
+
+.bookmark {
+    font-size: small;
+}
+
+.chain-list-item,
+.example-list-item {
+    padding: 5px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(0, 0, 255, 0.10);
+    overflow: hidden;
+}
+
+.depth-0 {
+    color: black;
+}
+
+.depth-1,
+.depth-2 {
+    font-style: italic;
+}
+
+.center-table {
+    width: 100%;
+}
+
+.center-table td {
+    vertical-align: top;
+    padding: 0.2em;
+}
+
+.help-vertical,
+.help-horizontal {
+    padding-left: 0.5em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 255, 0.10);
+    background: rgba(0, 0, 255, 0.01);
+    line-height: 1em;
+    font-size: 0.7em;
+}
+
+.chain-list,
+.example-list {
+    max-height: 20em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 255, 0.10);
+    line-height: 1em;
+    font-size: 0.7em;
+    font-family: monospace;
+    cursor: default;
+    background: rgba(255, 255, 255, 0.9);
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.example-link {
+    float: right;
+    color: gray;
+}
+
+.example-line {
+    float: left;
+}
+
+.icon-field {
+    background: url('data:image/gif;base64,R0lGODlhEAAQALMAAEF3r1OGuhBcnBljoCZrpyxwqEiDs7DJ3////////wAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAkALAAAAAAQABAAAAQjMMlJq70468016YkRGNxRIMWxDUg7aCaAAGkm3LgA7nzvUxEAOw==');
+}
+
+.icon-method {
+    background: url('data:image/gif;base64,R0lGODlhEAAQAMQAAAOASAWBSR2MVi6VYEOcbE2jc2SuhXG2jW+xinW3kD+XYD+YX0qbZVancF+qdGKqcHGxdnGxdYS/hIK9goS+hIK1f4i5gYi4gYm4gZjGkJe9iKvPmavPmLTSnf///wAAACH5BAEAAB4ALAAAAAAQABAAAAU+oCeOZGmeaKquLJoEQ7IWTpc5RXo0W881BxRgQilKJgCU4AGBRCAPAcqwsFwwFoUhRWBoKgzCCgFDtM5oVggAOw==');
+}
+
+.icon-field,
+.icon-method,
+.del-img {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.del-img {
+    cursor: pointer;
+    background: url('data:image/gif;base64,R0lGODlhEAAQANUAAMczNfRxdPRzdPNydPNzddgqL+AsNN8sM8cpMOY2PuU2PsUgK+UwOfJVYPRja/NjavNja/Nka8UYJ8YZKMUZJ8YgLPJUYMUTJfE/UvA/UfJIWPFIWNRldN+cqMpdSc5uXspXRspYRslYRtWIfMlQQ9ymoMlHPslHP8hHP8c9OeBhW/WBfcc9OuNST/WAfvSAfuPExP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAADEALAAAAAAQABAAAAZ8wJhwSCwaj0eYZ1QceWBEWKgVYgpHohYIKiyRXCvSp/QhvcIl4ghFEKhMqkHgZCVyWBHIw/FIcZAACg0NFgkASDEIDBsaGgwISBwVGJSUC39FHBOUBRIFGBkUmEIdF6AXHB0cphkXHUMwFwaoQ6sHF1xCsaNCq7mIwMExQQA7');
+}
