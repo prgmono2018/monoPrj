@@ -1,0 +1,9 @@
+var app = require('../server');
+var port = 7000
+app.listen(port, function(err) {
+    if (err){
+ console.log('error !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' + error);
+    }else{
+   console.log(`Listening to port ${port}`);
+    }
+});

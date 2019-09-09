@@ -1,0 +1,26 @@
+{
+  "name": "editorserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --inspect=5858 -r ts-node/register ./src/index.ts",
+    "start:watch": "tsc && nodemon -r ts-node/register ./src/index.ts",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "@types/node": "^12.7.2",
+    "eslint": "^6.2.2",
+    "eslint-plugin-import": "^2.18.2",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.2"
+  }
+}

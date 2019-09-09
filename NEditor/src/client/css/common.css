@@ -1,0 +1,13 @@
+#donateBanner {
+    background: url(/images/strip.png) repeat-x;
+    height: 66px;
+}
+
+#donateBanner div {
+    padding-top: 16px;
+}
+
+#donateBanner a {
+    color: black;
+    text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.75);
+}

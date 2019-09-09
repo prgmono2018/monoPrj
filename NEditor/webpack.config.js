@@ -17,14 +17,23 @@ module.exports = {
           }
         ]
       },
+     
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-          'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
-        ]
+        test: /\.(gif|png|jpe?g|svg|xml)$/i,
+        use: "file-loader"
       },
-      { test: /\.css$/, loader: 'style-loader!css-loader' }
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      }
 
     ]
   },
@@ -32,6 +41,10 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html"
+    }),
+    new HtmlWebPackPlugin({
+      template: './src/client/common/frame.html',
+      filename: 'frame.html'
     })
   ]
 };

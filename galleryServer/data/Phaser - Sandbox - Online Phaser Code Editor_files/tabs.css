@@ -1,0 +1,280 @@
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'stroke7pixeden';
+    src:url('../fonts/stroke7pixeden.eot?u58ytb');
+    src:url('../fonts/stroke7pixeden.eot?#iefixu58ytb') format('embedded-opentype'),
+        url('../fonts/stroke7pixeden.woff?u58ytb') format('woff'),
+        url('../fonts/stroke7pixeden.ttf?u58ytb') format('truetype'),
+        url('../fonts/stroke7pixeden.svg?u58ytb#stroke7pixeden') format('svg');
+}
+
+#main #content .tabs {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    font-weight: 300;
+}
+
+/* Nav */
+#main #content .tabs nav {
+    text-align: center;
+}
+
+#main #content .tabs nav ul {
+    position: relative;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    -ms-box-orient: horizontal;
+    -ms-box-pack: center;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+
+#main #content .tabs nav ul li {
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: 0;
+    text-align: center;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+#main #content .tabs nav ul li::before {
+    display: none;
+}
+
+#main #content .tabs nav a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 2.0;
+    padding: 0;
+    margin: 0;
+    bottom: -3px;
+    cursor: pointer;
+}
+
+#main #content .tabs nav a span {
+    vertical-align: middle;
+    font-size: 0.75em;
+}
+
+/* The currently selected tab */
+#main #content .tabs nav li.tab-current a {
+    color: #fff;
+    text-shadow: 0px 2px 0px rgba(0,0,0,0.75);
+}
+
+#main #content .tabs nav a:focus {
+    outline: none;
+}
+
+/* Icons */
+.icon::before {
+    z-index: 10;
+    display: inline-block;
+    margin: 0 0.4em 0 -1.5em;
+    vertical-align: middle;
+    text-transform: none;
+    font-weight: normal;
+    font-variant: normal;
+    font-size: 1.2em;
+    font-family: 'stroke7pixeden';
+    line-height: 1;
+    speak: none;
+    -webkit-backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mode0::before {
+    content: "\e6bf";
+}
+
+.icon-mode1::before {
+    content: "\e6b9";
+}
+
+.icon-mode2::before {
+    content: "\e60b";
+}
+
+.icon-mode3::before {
+    content: "\e62a";
+}
+
+.icon-mode4::before {
+    content: "\e6a4";
+}
+
+.icon-mode5::before {
+    content: "\e64a";
+}
+
+.icon-save::before {
+    content: "\e65f";
+}
+
+/* Content */
+.content-wrap {
+    position: relative;
+    padding: 16px 16px 16px 0px;
+}
+
+@media screen and (max-width: 58em) {
+    .tabs nav a.icon span {
+        display: none;
+    }
+    .tabs nav a:before {
+        margin-right: 0;
+    }
+}
+
+/*****************************/
+/* Trapezoid, based on http://lea.verou.me/2013/10/slanted-tabs-with-css-3d-transforms/ */
+/*****************************/ 
+
+#sandbox-container {
+    display: none;
+    font-size: 0.8em;
+    color: #efefef;
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#sandbox-container input[type=text] {
+    width: 70px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+#sandbox-container input[type=text]:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+#share p {
+    font-size: 0.8em;
+}
+
+#share input[type=text] {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+#share input[type=text]:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+#sandbox-container input[type=button] {
+    width: 90px;
+}
+
+#sandboxed {
+    position: relative !important;
+}
+
+#chains {
+    position: relative !important;
+    width: 100%;
+    min-height: 600px;
+}
+
+.tabs-style-tzoid nav {
+    margin: 0;
+}
+
+.tabs-style-tzoid nav ul li {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Un-selected tab */
+.tabs-style-tzoid nav ul li a {
+    padding: 0 1.5em 0 0.3em;
+    color: #ffdd06;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+    text-shadow: 0px 2px 0px rgba(0,0,0,0.75);
+}
+
+@media screen and (max-width: 54em) {
+    .tabs-style-tzoid nav ul li a {
+        padding: 0 0.5em 0 0.3em;
+    }
+}
+
+/* An un-selected tab when hovered over */
+.tabs-style-tzoid nav ul li a:hover,
+.tabs-style-tzoid nav ul li a:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.tabs-style-tzoid nav ul li a span {
+    font-weight: 500;
+    font-size: 0.75em;
+}
+
+.tabs-style-tzoid nav ul li a::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    outline: 1px solid transparent;
+    border-radius: 10px 10px 0 0;
+    background: #3b5f81;
+    box-shadow: inset 0 -3px 3px rgba(0,0,0,0.05);
+    content: '';
+    -webkit-transform: perspective(5px) rotateX(0.93deg) translateZ(-1px);
+    transform: perspective(5px) rotateX(0.93deg) translateZ(-1px);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.tabs-style-tzoid nav ul li.tab-current a::after,
+.tabs-style-tzoid .content-wrap {
+    background: #011e3a;
+    box-shadow: none;
+}
