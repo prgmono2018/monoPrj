@@ -92,6 +92,12 @@ export default class OpenNewDoc extends Component {
             this.setState({isNextBtnActive: ''});
             this.setState({isPrevBtnActive: ''});
         }
+        if (listid==1){
+            this.setState({isPrevBtnActive: 'disabled'});
+        }
+        if (totalPage==listid){
+            this.setState({isNextBtnActive: 'disabled'});
+        }
         $("span.active").removeClass('active');
         $('span#'+listid).addClass('active');
     }
