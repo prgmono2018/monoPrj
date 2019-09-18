@@ -9,6 +9,7 @@ const envKeys = Object.keys(env).reduce((prev, next) => {
 
 module.exports = {
   module: {
+
     rules: [
       {
         test: /\.(js|jsx)$/,
@@ -57,3 +58,5 @@ module.exports = {
     new webpack.DefinePlugin(envKeys)
   ]
 };
+
+

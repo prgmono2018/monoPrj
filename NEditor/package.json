@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server --open --hot --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack",
+    "prod": "webpack && node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -30,6 +31,7 @@
     "axios": "^0.19.0",
     "axois": "0.0.1-security",
     "dotenv": "^8.1.0",
+    "express": "^4.17.1",
     "url-loader": "^2.1.0"
   }
 }
