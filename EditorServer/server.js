@@ -1,20 +1,19 @@
 const express = require('express');
 const log = require('./src/custom/logger');
 const gameRouter = require('./src/routes/gameRouter');
-//const router = require('./route/routes');
 const bodyParser = require('body-parser');
 var cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
-
+require('dotenv').config();
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/MonoPrj", { useNewUrlParser: true });
+console.log("port"+process.env.PORT)
+mongoose.connect(`${process.env.MONGODB_HOST}/${process.env.MONGODB_SCHEMA}`, { useNewUrlParser: true });
 app.use(cors());
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
-
-//app.use(cors()); //enable cross origin- so I will able to use the gui
 app.use('/', gameRouter);
+
 
 
 // error handler

@@ -137,6 +137,8 @@ function toggleView(view)
     {
         //  Entering Help Mode
         $('#chains').css('display', 'block');
+       // document.querySelector('#donateBanner').style.display="none"
+    
     }
     else if (view === 4)
     {

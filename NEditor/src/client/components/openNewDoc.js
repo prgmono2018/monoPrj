@@ -35,7 +35,7 @@ export default class OpenNewDoc extends Component {
     
      onClickProject(e,prjName){
        
-        axios.get(`http://localhost:7000/get/${prjName}`   
+        axios.get(`${process.env.REACT_APP_EDITOR_SERVER}/${process.env.REACT_APP_GET}/${prjName}`   
         )
         .then(
           

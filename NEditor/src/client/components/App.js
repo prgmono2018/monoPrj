@@ -5,6 +5,7 @@ import SaveBtn from './saveBn'
 import OpenNewDoc from './openNewDoc'
 import axios from 'axios';
 import '../css/tabs.css';
+import IframeComponent from "./IframeComponent";
 
 export default class App extends Component {
     constructor (props) {
@@ -17,23 +18,17 @@ export default class App extends Component {
         };
 
         this.setDocumentStatus = this.setDocumentStatus.bind(this);
-        //this.setRefresh = this.setRefresh.bind(this);
+   
     }
 
     //editor.getSession().setValue("hhhhhhhhhhhhhhhhhhhhh")
   
     componentDidMount () {
-        //var popup = document.getElementById("myPopup");
-        //popup.innerHTML="Loading......"
-       // popup.classList.toggle("show");
-        axios.get("http://localhost:7000/getAllProjects"
-        )
+         axios.get(`${process.env.REACT_APP_EDITOR_SERVER}/${process.env.REACT_APP_GETALL}`)
         .then(
          
         json => {
-            //popup.innerHTML="";
             this.setState({data:json.data.docs});
-           // popup.innerHTML=this.printPrjList(json.data.docs);
           }
          
         ).catch(error => {
@@ -41,13 +36,9 @@ export default class App extends Component {
             console.log('error code=', error.response.status);
           })
 
-
-    /*    const script1 = document.createElement("script");
-        script1.src = "./js/confirmOnPageExit.js";
-        //script1.async = true;
-        script1.innerHTML = "var confirmOnPageExit = function (e)  {e = e || window.event; var message = 'Any text will block the navigation'; if (e) {e.returnValue = message;}return message;};window.addEventListener('beforeunload', confirmOnPageExit);";
-        script1.onload = () => this.scriptLoaded();
-        document.body.appendChild(script1);*/
+          
+         
+          //setTimeout(function(){document.querySelector('#donateBanner').style.display="none"}, 1300);
 
     }
     setDocumentStatus(saveNew,prjName,doc){
@@ -58,6 +49,8 @@ export default class App extends Component {
         }
     }
     render () {
+        const helpIframe = '<iframe id="chains" src="https://phaser.io/learn/chains/slim" style="display:none" ></iframe>';
+
         return (
             <>
             <SaveBtn setFatherState={this.setDocumentStatus} saveNew={this.state.saveNew} prjName={this.state.prjName} label="Save"/>
@@ -88,7 +81,7 @@ export default class App extends Component {
 
                     <div className="content-wrap">
              
-
+                        <IframeComponent iframe={helpIframe} />
                         <pre id="editor" style={{display: 'block',fontSize: '15px', height: '470px'}} className=" ace_editor ace-cobalt ace_dark"></pre>
 
 
@@ -96,9 +89,9 @@ export default class App extends Component {
                             <iframe sandbox="allow-scripts" id="sandboxed" src="src/client/common/frame.html" style={{width: '800px', height: '600px'}} ></iframe>
                             <br/>
                             <strong>Game Size: </strong> 
-                            <input type="text" id="gameSizeW" name="width" value="800"/> x 
-                            <input type="text" id="gameSizeH" name="height" value="600"/>
-                            <input type="button" id="updateSize" value="update"/>
+                            <input type="text" id="gameSizeW" name="width" defaultValue="800"/> x 
+                            <input type="text" id="gameSizeH" name="height" defaultValue="600"/>
+                            <input type="button" id="updateSize" defaultValue="update"/>
                             <p>You may need to click the game to give it input focus<br/>
                             Press CTRL+ENTER to return to the code. This may not work if the game has input focus.</p>
                         </div>

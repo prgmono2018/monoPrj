@@ -39,7 +39,7 @@ export default class SaveBtn extends Component {
 
             $.ajax({
                 type: "POST",
-                url: "http://localhost:7000/save/" ,
+                url: `${process.env.REACT_APP_EDITOR_SERVER}/${process.env.REACT_APP_SAVE}` ,
                 data: bundle,
                 success: function(data) {
                     //data = JSON.parse(data);
