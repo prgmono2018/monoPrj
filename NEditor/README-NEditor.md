@@ -1,13 +1,12 @@
-This project shows as all the games we entered the lobby.
-All the resources (images) are located at "img" folder at swiper project.
-
-
-
+This project is code editor for game development.
+ 
 This project consists on two projects:
-1. Recat client- NEditor
-2. Nodejs server- EditorServer
-
+1. React client
+2. Nodejs server
+ 
 Run the project:
 
-- Run the server- enter to EditorServer and run: npm run startProd - The server will run at port 7000
-- Run the client enter to NEditor and run: npm start -The client runs on port 8080 - http://localhost:8080
+The project contains .env file for changing the configuration(host\port etc..)
+- Run the server- npm run prod - The server will run at port 7000 ( as configured at .etc file)
+- Run the client: npm start -The react client will run on port 8080  at webpack  dev server- http://localhost:8080
+ 
