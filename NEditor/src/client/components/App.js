@@ -33,7 +33,7 @@ export default class App extends Component {
          
         ).catch(error => {
          
-            console.log('error code=', error.response.status);
+            //console.log('error code=', error.response.status);
           })
 
           

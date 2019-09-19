@@ -4,7 +4,7 @@ const log = require('../custom/logger');
 const gameModel = require('../model/gameModel');
 
 /* GET users listing. */
-router.get('/getAllProjects', function(req, res, next) {
+router.get('/getAllProjects', function(req, res) {
   log.debug("get all")
   gameModel.find({}, function(err, docs) {
     if (!err){ 
@@ -14,7 +14,7 @@ router.get('/getAllProjects', function(req, res, next) {
 });
 });
 
-router.post('/save', function(req, res, next) {
+router.post('/save', function(req, res) {
   //  let fileName =req.query.data;
   log.debug(">>> save");
   const prjName = req.body.prjName;
@@ -55,8 +55,8 @@ router.post('/save', function(req, res, next) {
         res.status(500).send({"txt": "server error"});
       }
     }).catch((err)=>{
-      console.log("error="+err);
-      return res.status(500).json({uuid:item.prjName,"op":"update","txt":err.txt});
+      //console.log("error="+err);
+      return res.status(500).json({uuid:prjName,"op":"update","txt":err.txt});
     
     })
 
@@ -64,7 +64,7 @@ router.post('/save', function(req, res, next) {
   }
 });
 
-router.get('/get/:name', function(req, res, next) {
+router.get('/get/:name', function(req, res) {
   log.debug("get by name")
   //const prjName = req.body.prjName;
   const prjName =req.params.name;

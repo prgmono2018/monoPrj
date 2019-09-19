@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
+class Greeting extends React.Component {
+  render() {
+    return (
+      <h1>Hello, {this.props.name}</h1>
+    );
+  }
+}
+
+Greeting.propTypes = {
+  name: PropTypes.string
+};
 
 export default class SaveBtn extends Component {
     constructor (props) {
@@ -13,15 +25,8 @@ export default class SaveBtn extends Component {
 
     onSaveClick()
     {
-        /*  if (person != null) {
-            document.getElementById("demo").innerHTML =
-            "Hello " + person + "! How are you today?";
-          }*/
-          //save(prjName)
-          var bundle = {};
+            var bundle = {};
             code[mode] = editor.getSession().getValue();
-
-        // bundle.fork = fork;
             bundle.code1 = code[0];
             bundle.code2 = code[1];
             bundle.code3 = code[2];
@@ -56,11 +61,8 @@ export default class SaveBtn extends Component {
                     alert(data.responseJSON.txt)
                   //  window.addEventListener('beforeunload', confirmOnPageExit);
                 }.bind(this),
-                complete: function(data) {
-                  //  //$(modeMap[svd]).removeClass('icon-save');
-                   // $(modeMap[svd]).addClass('icon-mode' + svd);
-                    //$(modeMap[svd] + ' span').text(titleMap[svd]);
-                    svd = -1;
+                complete: function() {
+                        svd = -1;
                 }.bind(this)
             }, "text");
     }
@@ -71,3 +73,11 @@ export default class SaveBtn extends Component {
         );
     }
 }
+
+SaveBtn.propTypes = {
+  label: PropTypes.string,
+  prjName: PropTypes.string,
+  setFatherState: PropTypes.func,
+  saveNew: PropTypes.string
+};
+

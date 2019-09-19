@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../css/popupStyle.css';
+import PropTypes from 'prop-types';
+
 export default class OpenNewDoc extends Component {
     constructor (props) {
         super(props);
@@ -40,7 +42,6 @@ export default class OpenNewDoc extends Component {
         .then(
           
         json => {
-           const obj=json.data.docs[0];
            code[0]=json.data.docs[0].preload
            code[1]=json.data.docs[0].create
            code[2]=json.data.docs[0].update
@@ -157,9 +158,7 @@ preventEvents(event){
 }
     render () {
         const { currentPage, prjsPerPage,upperPageBound,lowerPageBound,isPrevBtnActive,isNextBtnActive} = this.state;
-        
-        
-        //var prjs=this.props.data;
+
         var names = [];
         if (this.props.data.length>0){
         names=this.props.data.map(game => 
@@ -186,8 +185,8 @@ preventEvents(event){
         for (let i = 1; i <= Math.ceil(names.length / prjsPerPage); i++) {
           pageNumbers.push(i);
         }
-        const rowLen = pageNumbers.length;
-     /*   const renderPageNumbers = pageNumbers.map((number,index) => {
+     /*   const rowLen = pageNumbers.length;
+        const renderPageNumbers = pageNumbers.map((number,index) => {
             return (
                <b key={number}
                 id={number}
@@ -252,3 +251,9 @@ preventEvents(event){
         );
     }
 }
+
+OpenNewDoc.propTypes = {
+    setFatherState: PropTypes.func,
+    data: PropTypes.array
+  };
+  

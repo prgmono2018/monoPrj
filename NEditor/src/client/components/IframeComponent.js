@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 
 
 export default class IframeComponent extends Component {
@@ -26,3 +26,7 @@ export default class IframeComponent extends Component {
         );
       }
 }
+
+IframeComponent.propTypes = {
+  iframe: PropTypes.string,
+};
