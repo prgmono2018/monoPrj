@@ -1,0 +1,615 @@
+{"message":"get all","level":"debug"}
+{"message":"get all","level":"debug"}
+{"message":"get all","level":"debug"}
+2019-09-24T06:54:19.769Z [right meow!] debug: get all
+2019-09-24T07:07:10.428Z [>> msg <<] debug: get all
+2019-09-24T09:13:39.328Z [>> msg <<] debug: get all
+2019-09-24T09:38:46.594Z [>> msg <<] debug: port7070
+2019-09-24T09:39:45.272Z [>> msg <<] debug: get all
+2019-09-24T09:42:47.111Z [>> msg <<] debug: port7070
+2019-09-24T09:42:57.101Z [>> msg <<] debug: get all
+2019-09-24T09:47:12.647Z [>> msg <<] debug: port7070
+2019-09-24T09:47:17.534Z [>> msg <<] debug: get all
+2019-09-24T09:47:17.617Z [>> msg <<] error: bla
+2019-09-24T09:47:44.747Z [>> msg <<] debug: get by name
+2019-09-24T09:47:50.576Z [>> msg <<] debug: get by name
+2019-09-24T09:54:17.912Z [>> msg <<] debug: port7070
+2019-09-24T09:54:24.205Z [>> msg <<] debug: get all
+2019-09-24T09:54:32.753Z [>> msg <<] debug: get by name
+2019-09-24T09:57:58.138Z [>> msg <<] debug: port7070
+2019-09-24T09:58:02.946Z [>> msg <<] debug: get all
+2019-09-24T09:58:09.710Z [>> msg <<] debug: >>> save
+2019-09-24T09:58:09.710Z [>> msg <<] debug: render:function render () {
+                
+                }
+2019-09-24T09:58:09.711Z [>> msg <<] debug: preload:function preload() {
+                
+                    game.stage.backgroundColor = '#85b5e1';
+                
+                    game.load.crossOrigin = 'anonymous';
+                
+                    game.load.image('player', 'http://localhost:8000/phaser-dude.png');
+                    game.load.image('platform', 'http://localhost:8000/platform.png');
+                
+                }
+2019-09-24T09:58:09.711Z [>> msg <<] debug: create:var player;
+                var platforms;
+                var cursors;
+                var jumpButton;
+                
+                function create() {
+                
+                    player = game.add.sprite(100, 200, 'player');
+                
+                    game.physics.arcade.enable(player);
+                
+                    player.body.collideWorldBounds = true;
+                    player.body.gravity.y = 500;
+                
+                    platforms = game.add.physicsGroup();
+                
+                    platforms.create(500, 150, 'platform');
+                    platforms.create(-200, 300, 'platform');
+                    platforms.create(400, 450, 'platform');
+                
+                    platforms.setAll('body.immovable', true);
+                
+                    cursors = game.input.keyboard.createCursorKeys();
+                    jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+                
+                }
+2019-09-24T09:58:09.712Z [>> msg <<] debug: update:function update () {
+                
+                    game.physics.arcade.collide(player, platforms);
+                
+                    player.body.velocity.x = 0;
+                
+                    if (cursors.left.isDown)
+                    {
+                        player.body.velocity.x = -250;
+                    }
+                    else if (cursors.right.isDown)
+                    {
+                        player.body.velocity.x = 250;
+                    }
+                
+                    if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.down))
+                    {
+                        player.body.velocity.y = -400;
+                    }
+                }
+2019-09-24T09:58:09.729Z [>> msg <<] error: Project exists MongoError: E11000 duplicate key error collection: MonoPrj.gameDatas index: prjName_1 dup key: { : "" }
+    at Function.create (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\error.js:44:12)
+    at toError (C:\gitProjects\NEditor\node_modules\mongodb\lib\utils.js:150:22)
+    at coll.s.topology.insert (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\common_functions.js:266:39)
+    at C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:420:18
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-09-24T09:58:09.730Z [>> msg <<] debug: E11000 duplicate key error collection: MonoPrj.gameDatas index: prjName_1 dup key: { : "" }
+2019-09-24T09:58:51.097Z [>> msg <<] debug: get by name
+2019-09-24T09:58:56.055Z [>> msg <<] debug: get by name
+2019-09-24T10:00:42.025Z [>> msg <<] debug: port7070
+2019-09-24T10:00:45.066Z [>> msg <<] debug: get all
+2019-09-24T10:01:02.376Z [>> msg <<] debug: >>> save
+2019-09-24T10:01:02.376Z [>> msg <<] debug: render:function render () {
+                
+                }
+2019-09-24T10:01:02.376Z [>> msg <<] debug: preload:function preload() {
+                
+                    game.stage.backgroundColor = '#85b5e1';
+                
+                    game.load.crossOrigin = 'anonymous';
+                
+                    game.load.image('player', 'http://localhost:8000/phaser-dude.png');
+                    game.load.image('platform', 'http://localhost:8000/platform.png');
+                
+                }
+2019-09-24T10:01:02.377Z [>> msg <<] debug: create:var player;
+                var platforms;
+                var cursors;
+                var jumpButton;
+                
+                function create() {
+                
+                    player = game.add.sprite(100, 200, 'player');
+                
+                    game.physics.arcade.enable(player);
+                
+                    player.body.collideWorldBounds = true;
+                    player.body.gravity.y = 500;
+                
+                    platforms = game.add.physicsGroup();
+                
+                    platforms.create(500, 150, 'platform');
+                    platforms.create(-200, 300, 'platform');
+                    platforms.create(400, 450, 'platform');
+                
+                    platforms.setAll('body.immovable', true);
+                
+                    cursors = game.input.keyboard.createCursorKeys();
+                    jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+                
+                }
+2019-09-24T10:01:02.378Z [>> msg <<] debug: update:function update () {
+                
+                    game.physics.arcade.collide(player, platforms);
+                
+                    player.body.velocity.x = 0;
+                
+                    if (cursors.left.isDown)
+                    {
+                        player.body.velocity.x = -250;
+                    }
+                    else if (cursors.right.isDown)
+                    {
+                        player.body.velocity.x = 250;
+                    }
+                
+                    if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.down))
+                    {
+                        player.body.velocity.y = -400;
+                    }
+                }
+2019-09-24T10:01:02.401Z [>> msg <<] error: Project exists MongoError: E11000 duplicate key error collection: MonoPrj.gameDatas index: prjName_1 dup key: { : "ccc" }
+    at Function.create (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\error.js:44:12)
+    at toError (C:\gitProjects\NEditor\node_modules\mongodb\lib\utils.js:150:22)
+    at coll.s.topology.insert (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\common_functions.js:266:39)
+    at C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:420:18
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-09-24T10:01:02.403Z [>> msg <<] debug: E11000 duplicate key error collection: MonoPrj.gameDatas index: prjName_1 dup key: { : "ccc" }
+2019-09-24T10:01:12.202Z [>> msg <<] debug: get by name
+2019-09-24T10:01:47.581Z [>> msg <<] debug: port7070
+2019-09-24T10:02:20.867Z [>> msg <<] debug: get all
+2019-09-24T10:02:42.233Z [>> msg <<] debug: get by name
+2019-09-24T10:02:46.368Z [>> msg <<] debug: get by name
+2019-09-24T10:04:41.104Z [>> msg <<] debug: port7070
+2019-09-24T10:04:46.773Z [>> msg <<] debug: get all
+2019-09-24T10:05:27.774Z [>> msg <<] debug: port7070
+2019-09-24T10:05:31.719Z [>> msg <<] debug: get all
+2019-09-24T10:06:06.830Z [>> msg <<] debug: port7070
+2019-09-24T10:06:11.568Z [>> msg <<] debug: get all
+2019-09-24T10:06:11.642Z [>> msg <<] debug: no route?????
+2019-09-24T10:06:48.480Z [>> msg <<] debug: >>> save
+2019-09-24T10:06:48.480Z [>> msg <<] debug: render:function render () {
+                
+                }
+2019-09-24T10:06:48.480Z [>> msg <<] debug: preload:function preload() {
+                
+                    game.stage.backgroundColor = '#85b5e1';
+                
+                    game.load.crossOrigin = 'anonymous';
+                
+                    game.load.image('player', 'http://localhost:8000/phaser-dude.png');
+                    game.load.image('platform', 'http://localhost:8000/platform.png');
+                
+                }
+2019-09-24T10:06:48.481Z [>> msg <<] debug: create:var player;
+                var platforms;
+                var cursors;
+                var jumpButton;
+                
+                function create() {
+                
+                    player = game.add.sprite(100, 200, 'player');
+                
+                    game.physics.arcade.enable(player);
+                
+                    player.body.collideWorldBounds = true;
+                    player.body.gravity.y = 500;
+                
+                    platforms = game.add.physicsGroup();
+                
+                    platforms.create(500, 150, 'platform');
+                    platforms.create(-200, 300, 'platform');
+                    platforms.create(400, 450, 'platform');
+                
+                    platforms.setAll('body.immovable', true);
+                
+                    cursors = game.input.keyboard.createCursorKeys();
+                    jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+                
+                }
+2019-09-24T10:06:48.481Z [>> msg <<] debug: update:function update () {
+                
+                    game.physics.arcade.collide(player, platforms);
+                
+                    player.body.velocity.x = 0;
+                
+                    if (cursors.left.isDown)
+                    {
+                        player.body.velocity.x = -250;
+                    }
+                    else if (cursors.right.isDown)
+                    {
+                        player.body.velocity.x = 250;
+                    }
+                
+                    if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.down))
+                    {
+                        player.body.velocity.y = -400;
+                    }
+                }
+2019-09-24T10:06:48.507Z [>> msg <<] error: Project exists MongoError: E11000 duplicate key error collection: MonoPrj.gameDatas index: prjName_1 dup key: { : "" }
+    at Function.create (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\error.js:44:12)
+    at toError (C:\gitProjects\NEditor\node_modules\mongodb\lib\utils.js:150:22)
+    at coll.s.topology.insert (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\common_functions.js:266:39)
+    at C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:420:18
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-09-24T10:06:48.510Z [>> msg <<] debug: E11000 duplicate key error collection: MonoPrj.gameDatas index: prjName_1 dup key: { : "" }
+2019-09-24T10:06:54.907Z [>> msg <<] debug: get by name
+2019-09-24T10:07:11.827Z [>> msg <<] debug: no route?????
+2019-09-24T10:07:11.939Z [>> msg <<] debug: no route?????
+2019-09-24T10:07:34.033Z [>> msg <<] debug: get all
+2019-09-24T10:07:34.124Z [>> msg <<] debug: no route?????
+2019-09-24T10:13:01.885Z [>> msg <<] debug: port7070
+2019-09-24T10:13:02.435Z [>> msg <<] debug: get all
+2019-09-24T10:13:02.498Z [>> msg <<] debug: no route?????
+2019-09-24T10:13:36.834Z [>> msg <<] debug: get all
+2019-09-24T10:13:36.907Z [>> msg <<] debug: no route?????
+2019-09-24T10:13:46.859Z [>> msg <<] debug: no route?????
+2019-09-24T10:13:46.971Z [>> msg <<] debug: no route?????
+2019-09-24T10:14:01.763Z [>> msg <<] debug: no route?????
+2019-09-24T10:14:01.868Z [>> msg <<] debug: no route?????
+2019-09-24T10:14:46.649Z [>> msg <<] debug: port7070
+2019-09-24T10:14:53.550Z [>> msg <<] debug: get all
+2019-09-24T10:15:04.259Z [>> msg <<] debug: get by name
+2019-09-24T10:15:18.680Z [>> msg <<] debug: get by name
+2019-09-24T10:15:20.435Z [>> msg <<] debug: >>> save
+2019-09-24T10:15:20.435Z [>> msg <<] debug: render:function render () {
+                
+                }
+2019-09-24T10:15:20.436Z [>> msg <<] debug: preload:function preload() {
+                
+                    game.stage.backgroundColor = '#85b5e1';
+                
+                    game.load.crossOrigin = 'anonymous';
+                
+                    game.load.image('player', 'http://localhost:8000/phaser-dude.png');
+                    game.load.image('platform', 'http://localhost:8000/platform.png');
+                
+                }
+2019-09-24T10:15:20.436Z [>> msg <<] debug: create:var player;
+                var platforms;
+                var cursors;
+                var jumpButton;
+                
+                function create() {
+                
+                    player = game.add.sprite(100, 200, 'player');
+                
+                    game.physics.arcade.enable(player);
+                
+                    player.body.collideWorldBounds = true;
+                    player.body.gravity.y = 500;
+                
+                    platforms = game.add.physicsGroup();
+                
+                    platforms.create(500, 150, 'platform');
+                    platforms.create(-200, 300, 'platform');
+                    platforms.create(400, 450, 'platform');
+                
+                    platforms.setAll('body.immovable', true);
+                
+                    cursors = game.input.keyboard.createCursorKeys();
+                    jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+                
+                }
+2019-09-24T10:15:20.437Z [>> msg <<] debug: update:function update () {
+                
+                    game.physics.arcade.collide(player, platforms);
+                
+                    player.body.velocity.x = 0;
+                
+                    if (cursors.left.isDown)
+                    {
+                        player.body.velocity.x = -250;
+                    }
+                    else if (cursors.right.isDown)
+                    {
+                        player.body.velocity.x = 250;
+                    }
+                
+                    if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.down))
+                    {
+                        player.body.velocity.y = -400;
+                    }
+                }
+2019-09-24T10:16:00.954Z [>> msg <<] debug: get all
+2019-09-24T10:16:06.293Z [>> msg <<] debug: get all
+2019-09-24T10:20:18.424Z [>> msg <<] debug: port7070
+2019-09-24T10:21:19.452Z [>> msg <<] debug: get all
+2019-09-24T10:21:19.519Z [>> msg <<] debug: no route?????
+2019-09-24T10:21:35.828Z [>> msg <<] debug: no route?????
+2019-09-24T10:21:35.960Z [>> msg <<] debug: no route?????
+2019-09-24T10:22:34.991Z [>> msg <<] debug: port7070
+2019-09-24T10:22:41.924Z [>> msg <<] debug: get all
+2019-09-24T10:22:41.995Z [>> msg <<] debug: no route?????
+2019-09-24T10:22:50.921Z [>> msg <<] debug: get all
+2019-09-24T10:22:50.985Z [>> msg <<] debug: no route?????
+2019-09-24T10:23:04.193Z [>> msg <<] debug: no route?????
+2019-09-24T10:23:04.286Z [>> msg <<] debug: no route?????
+2019-09-24T10:23:59.912Z [>> msg <<] debug: port7070
+2019-09-24T10:24:06.694Z [>> msg <<] debug: get all
+2019-09-24T10:24:06.787Z [>> msg <<] debug: no route?????
+2019-09-24T10:24:24.307Z [>> msg <<] debug: no route?????
+2019-09-24T10:24:24.444Z [>> msg <<] debug: no route?????
+2019-09-24T11:05:45.220Z [>> msg <<] debug: get all
+2019-09-24T11:05:45.282Z [>> msg <<] debug: no route?????
+2019-09-24T11:06:02.558Z [>> msg <<] debug: no route?????
+2019-09-24T11:06:02.663Z [>> msg <<] debug: no route?????
+2019-09-24T11:23:22.020Z [>> msg <<] debug: port7070
+2019-09-24T11:23:30.847Z [>> msg <<] debug: get all
+2019-09-24T11:23:30.931Z [>> msg <<] error: 4000
+2019-09-24T11:23:40.858Z [>> msg <<] debug: get by name:
+2019-09-24T11:23:51.458Z [>> msg <<] error: 4000
+2019-09-24T11:23:51.578Z [>> msg <<] error: 4000
+2019-09-24T11:25:39.586Z [>> msg <<] error: 4000
+2019-09-24T11:25:43.290Z [>> msg <<] debug: get all
+2019-09-24T11:25:43.400Z [>> msg <<] error: 4000
+2019-09-24T11:25:54.866Z [>> msg <<] error: 4000
+2019-09-24T11:26:38.505Z [>> msg <<] error: 4000
+2019-09-24T11:27:18.245Z [>> msg <<] error: 4000
+2019-09-24T11:27:24.145Z [>> msg <<] debug: >>> save
+2019-09-24T11:27:35.695Z [>> msg <<] debug: get by name:
+2019-09-24T11:28:05.017Z [>> msg <<] debug: get by name:
+2019-09-25T05:19:43.808Z [>> msg <<] debug: port7070
+2019-09-25T05:50:07.100Z [>> msg <<] debug: port7070
+2019-09-25T05:50:54.963Z [>> msg <<] debug: get all
+2019-09-25T05:50:55.240Z [>> msg <<] error: 4000
+2019-09-25T05:51:53.717Z [>> msg <<] debug: get all
+2019-09-25T05:51:53.787Z [>> msg <<] error: 4000
+2019-09-25T05:52:02.875Z [>> msg <<] debug: get by name:
+2019-09-25T05:54:27.666Z [>> msg <<] debug: port7070
+2019-09-25T05:54:34.038Z [>> msg <<] debug: get all
+2019-09-25T05:54:34.114Z [>> msg <<] error: 4000
+2019-09-25T05:54:40.014Z [>> msg <<] debug: get by name:
+2019-09-25T05:54:43.949Z [>> msg <<] error: 4000
+2019-09-25T05:54:52.763Z [>> msg <<] error: 4000
+2019-09-25T05:55:01.651Z [>> msg <<] error: 4000
+2019-09-25T05:57:26.070Z [>> msg <<] debug: port7070
+2019-09-25T05:57:31.634Z [>> msg <<] error: 4000
+2019-09-25T05:58:41.785Z [>> msg <<] debug: port7070
+2019-09-25T05:58:44.586Z [>> msg <<] error: 4000
+2019-09-25T06:01:49.868Z [>> msg <<] debug: port7070
+2019-09-25T06:01:56.020Z [>> msg <<] debug: get all
+2019-09-25T06:01:56.146Z [>> msg <<] error: 4000
+2019-09-25T06:01:56.554Z [>> msg <<] error: 4000
+2019-09-25T06:02:13.639Z [>> msg <<] debug: >>> save
+2019-09-25T06:02:24.882Z [>> msg <<] debug: get by name:
+2019-09-25T06:02:27.810Z [>> msg <<] debug: get by name:
+2019-09-25T06:08:42.419Z [>> msg <<] debug: >>> save
+2019-09-25T06:09:09.387Z [>> msg <<] debug: >>> save
+2019-09-25T06:09:58.085Z [>> msg <<] debug: get by name:
+2019-09-25T06:10:07.086Z [>> msg <<] error: MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms
+    at connect (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:331:13)
+    at makeConnection (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:39:11)
+    at callback (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:261:5)
+    at Socket.err (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:286:7)
+    at Object.onceWrapper (events.js:273:13)
+    at Socket.emit (events.js:182:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-09-25T06:10:07.089Z [>> msg <<] error: MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms
+    at connect (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:331:13)
+    at makeConnection (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:39:11)
+    at callback (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:261:5)
+    at Socket.err (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:286:7)
+    at Object.onceWrapper (events.js:273:13)
+    at Socket.emit (events.js:182:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-09-25T06:12:17.891Z [>> msg <<] debug: >>> save
+2019-09-25T06:12:17.895Z [>> msg <<] error: MongoError: server instance pool was destroyed
+    at basicWriteValidations (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:570:41)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:715:16)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\topologies\topology_base.js:327:25)
+    at updateDocuments (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\common_functions.js:367:19)
+    at executeLegacyOperation (C:\gitProjects\NEditor\node_modules\mongodb\lib\utils.js:417:24)
+    at Collection.<anonymous> (C:\gitProjects\NEditor\node_modules\mongodb\lib\collection.js:817:10)
+    at Collection.deprecated [as update] (internal/util.js:67:15)
+    at NativeCollection.(anonymous function) [as update] (C:\gitProjects\NEditor\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:166:28)
+    at NodeCollection.update (C:\gitProjects\NEditor\node_modules\mquery\lib\collection\node.js:66:19)
+    at model.Query._updateThunk (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3694:23)
+    at model.Query.<anonymous> (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3732:23)
+    at model.Query._wrappedThunk [as _execUpdate] (C:\gitProjects\NEditor\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\gitProjects\NEditor\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-09-25T06:22:43.148Z [>> msg <<] debug: >>> save
+2019-09-25T06:22:43.152Z [>> msg <<] error: MongoError: server instance pool was destroyed
+    at basicWriteValidations (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:570:41)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:715:16)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\topologies\topology_base.js:327:25)
+    at updateDocuments (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\common_functions.js:367:19)
+    at executeLegacyOperation (C:\gitProjects\NEditor\node_modules\mongodb\lib\utils.js:417:24)
+    at Collection.<anonymous> (C:\gitProjects\NEditor\node_modules\mongodb\lib\collection.js:817:10)
+    at Collection.deprecated [as update] (internal/util.js:67:15)
+    at NativeCollection.(anonymous function) [as update] (C:\gitProjects\NEditor\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:166:28)
+    at NodeCollection.update (C:\gitProjects\NEditor\node_modules\mquery\lib\collection\node.js:66:19)
+    at model.Query._updateThunk (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3694:23)
+    at model.Query.<anonymous> (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3732:23)
+    at model.Query._wrappedThunk [as _execUpdate] (C:\gitProjects\NEditor\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\gitProjects\NEditor\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-09-25T06:23:09.018Z [>> msg <<] debug: >>> save
+2019-09-25T06:23:09.019Z [>> msg <<] error: MongoError: server instance pool was destroyed
+    at basicWriteValidations (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:570:41)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:715:16)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\topologies\topology_base.js:327:25)
+    at updateDocuments (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\common_functions.js:367:19)
+    at executeLegacyOperation (C:\gitProjects\NEditor\node_modules\mongodb\lib\utils.js:417:24)
+    at Collection.<anonymous> (C:\gitProjects\NEditor\node_modules\mongodb\lib\collection.js:817:10)
+    at Collection.deprecated [as update] (internal/util.js:67:15)
+    at NativeCollection.(anonymous function) [as update] (C:\gitProjects\NEditor\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:166:28)
+    at NodeCollection.update (C:\gitProjects\NEditor\node_modules\mquery\lib\collection\node.js:66:19)
+    at model.Query._updateThunk (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3694:23)
+    at model.Query.<anonymous> (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3732:23)
+    at model.Query._wrappedThunk [as _execUpdate] (C:\gitProjects\NEditor\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\gitProjects\NEditor\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-09-25T06:23:35.747Z [>> msg <<] debug: >>> save
+2019-09-25T06:23:35.749Z [>> msg <<] error: MongoError: server instance pool was destroyed
+    at basicWriteValidations (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:570:41)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:715:16)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\topologies\topology_base.js:327:25)
+    at updateDocuments (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\common_functions.js:367:19)
+    at executeLegacyOperation (C:\gitProjects\NEditor\node_modules\mongodb\lib\utils.js:417:24)
+    at Collection.<anonymous> (C:\gitProjects\NEditor\node_modules\mongodb\lib\collection.js:817:10)
+    at Collection.deprecated [as update] (internal/util.js:67:15)
+    at NativeCollection.(anonymous function) [as update] (C:\gitProjects\NEditor\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:166:28)
+    at NodeCollection.update (C:\gitProjects\NEditor\node_modules\mquery\lib\collection\node.js:66:19)
+    at model.Query._updateThunk (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3694:23)
+    at model.Query.<anonymous> (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3732:23)
+    at model.Query._wrappedThunk [as _execUpdate] (C:\gitProjects\NEditor\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\gitProjects\NEditor\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-09-25T06:27:47.051Z [>> msg <<] debug: get all
+2019-09-25T06:27:47.054Z [>> msg <<] error: MongoError: pool destroyed
+    at Pool.write (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:860:12)
+    at _command (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\wireprotocol\command.js:107:10)
+    at command (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\wireprotocol\command.js:25:5)
+    at Object.query (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\wireprotocol\query.js:57:3)
+    at Server.query (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:640:16)
+    at FindOperation.execute (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\find.js:24:12)
+    at topology.selectServer (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\execute_operation.js:163:17)
+    at Server.selectServer (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:828:3)
+    at Server.selectServer (C:\gitProjects\NEditor\node_modules\mongodb\lib\topologies\topology_base.js:363:32)
+    at executeWithServerSelection (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\execute_operation.js:150:12)
+    at executeOperation (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\execute_operation.js:81:16)
+    at Cursor._initializeCursor (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\cursor.js:545:7)
+    at Cursor._initializeCursor (C:\gitProjects\NEditor\node_modules\mongodb\lib\cursor.js:191:11)
+    at nextFunction (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\cursor.js:748:10)
+    at Cursor._next (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\cursor.js:202:5)
+    at fetchDocs (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\to_array.js:27:14)
+2019-09-25T06:27:47.144Z [>> msg <<] error: 4000
+2019-09-25T06:27:47.454Z [>> msg <<] error: 4000
+2019-09-25T06:28:34.384Z [>> msg <<] debug: port7070
+2019-09-25T06:28:45.569Z [>> msg <<] debug: get all
+2019-09-25T06:28:45.660Z [>> msg <<] error: 4000
+2019-09-25T06:28:45.995Z [>> msg <<] error: 4000
+2019-09-25T06:28:54.558Z [>> msg <<] debug: get by name:
+2019-09-25T06:28:57.681Z [>> msg <<] debug: >>> save
+2019-09-25T06:29:59.108Z [>> msg <<] debug: >>> save
+2019-09-25T06:30:18.714Z [>> msg <<] debug: >>> save
+2019-09-25T06:30:59.530Z [>> msg <<] debug: >>> save
+2019-09-25T06:31:44.423Z [>> msg <<] error: MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms
+    at connect (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:331:13)
+    at makeConnection (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:39:11)
+    at callback (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:261:5)
+    at Socket.err (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:286:7)
+    at Object.onceWrapper (events.js:273:13)
+    at Socket.emit (events.js:182:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-09-25T06:31:44.433Z [>> msg <<] error: MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms
+    at connect (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:331:13)
+    at makeConnection (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:39:11)
+    at callback (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:261:5)
+    at Socket.err (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:286:7)
+    at Object.onceWrapper (events.js:273:13)
+    at Socket.emit (events.js:182:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-09-25T07:00:47.408Z [>> msg <<] debug: port7070
+2019-09-25T07:01:26.932Z [>> msg <<] debug: get all
+2019-09-25T07:01:27.030Z [>> msg <<] error: 4000
+2019-09-25T07:01:27.394Z [>> msg <<] error: 4000
+2019-09-25T07:01:30.492Z [>> msg <<] debug: get by name:
+2019-09-25T07:01:32.175Z [>> msg <<] debug: >>> save
+2019-09-25T07:02:23.572Z [>> msg <<] debug: port7070
+2019-09-25T07:03:39.270Z [>> msg <<] debug: port7070
+2019-09-25T07:05:24.549Z [>> msg <<] debug: port7070
+2019-09-25T07:05:41.243Z [>> msg <<] debug: port7070
+2019-09-25T07:05:51.821Z [>> msg <<] debug: >>> save
+2019-09-25T07:06:09.745Z [>> msg <<] debug: get by name:
+2019-09-25T07:06:30.708Z [>> msg <<] debug: get by name:
+2019-09-25T07:06:40.915Z [>> msg <<] debug: get by name:
+2019-09-25T07:07:13.293Z [>> msg <<] debug: get by name:
+2019-09-25T07:07:20.122Z [>> msg <<] error: Error Stack: MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms
+    at connect (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:331:13)
+    at makeConnection (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:39:11)
+    at callback (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:261:5)
+    at Socket.err (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:286:7)
+    at Object.onceWrapper (events.js:273:13)
+    at Socket.emit (events.js:182:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-09-25T07:08:54.229Z [>> msg <<] debug: get by name:
+2019-09-25T07:09:47.329Z [>> msg <<] debug: port7070
+2019-09-25T07:11:02.270Z [>> msg <<] debug: port7070
+2019-09-25T07:11:06.126Z [>> msg <<] debug: get all
+2019-09-25T07:11:06.226Z [>> msg <<] error: 4000
+2019-09-25T07:11:06.551Z [>> msg <<] error: 4000
+2019-09-25T07:11:11.925Z [>> msg <<] debug: get by name:
+2019-09-25T07:11:16.558Z [>> msg <<] debug: >>> save
+2019-09-25T07:11:24.292Z [>> msg <<] debug: >>> save
+2019-09-25T07:12:52.353Z [>> msg <<] error: Error Stack: MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms
+    at connect (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:331:13)
+    at makeConnection (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:39:11)
+    at callback (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:261:5)
+    at Socket.err (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:286:7)
+    at Object.onceWrapper (events.js:273:13)
+    at Socket.emit (events.js:182:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-09-25T07:13:06.372Z [>> msg <<] debug: get by name:
+2019-09-25T07:32:21.626Z [>> msg <<] debug: port7070
+2019-09-25T07:33:16.756Z [>> msg <<] debug: port7070
+2019-09-25T07:33:23.129Z [>> msg <<] debug: get all
+2019-09-25T07:33:23.224Z [>> msg <<] error: 4000
+2019-09-25T07:33:23.630Z [>> msg <<] error: 4000
+2019-09-25T07:34:21.412Z [>> msg <<] debug: port7070
+2019-09-25T07:35:15.711Z [>> msg <<] debug: get all
+2019-09-25T07:35:15.830Z [>> msg <<] error: 4000
+2019-09-25T07:35:16.262Z [>> msg <<] error: 4000
+2019-09-25T07:37:16.050Z [>> msg <<] debug: port7070
+2019-09-25T07:42:13.280Z [>> msg <<] debug: port7070
+2019-09-25T07:43:56.103Z [>> msg <<] debug: get by name:
+2019-09-25T07:49:25.608Z [>> msg <<] debug: port7070
+2019-09-25T07:49:35.847Z [>> msg <<] debug: get all
+2019-09-25T07:49:35.967Z [>> msg <<] error: 4000
+2019-09-25T07:49:36.382Z [>> msg <<] error: 4000
+2019-09-25T07:49:57.041Z [>> msg <<] debug: get by name:
+2019-09-25T07:50:08.982Z [>> msg <<] debug: get by name:
+2019-09-25T08:25:51.788Z [>> msg <<] debug: get all
+2019-09-25T08:25:51.972Z [>> msg <<] error: 4000
+2019-09-25T08:25:55.203Z [>> msg <<] debug: get by name:
+2019-09-25T08:25:58.830Z [>> msg <<] debug: >>> save
+2019-09-25T08:26:02.395Z [>> msg <<] debug: get by name:
+2019-09-25T08:26:08.500Z [>> msg <<] debug: >>> save
+2019-09-25T08:26:15.506Z [>> msg <<] debug: get by name:
+2019-09-25T08:36:47.437Z [>> msg <<] debug: get all
+2019-09-25T08:36:47.551Z [>> msg <<] error: 4000
+2019-09-25T08:36:47.910Z [>> msg <<] error: 4000
+2019-09-25T11:36:42.882Z [>> msg <<] debug: get all
+2019-09-25T11:36:42.981Z [>> msg <<] error: 4000
+2019-09-25T11:36:43.327Z [>> msg <<] error: 4000
+2019-09-25T11:38:36.569Z [>> msg <<] debug: port7070
+2019-09-25T11:38:44.154Z [>> msg <<] debug: get all
+2019-09-25T11:38:44.252Z [>> msg <<] error: 4000
+2019-09-25T11:38:44.727Z [>> msg <<] error: 4000
+2019-09-25T11:39:13.447Z [>> msg <<] error: 4000
+2019-09-25T11:39:16.851Z [>> msg <<] error: 4000
+2019-09-25T11:39:23.909Z [>> msg <<] error: 4000
+2019-09-25T11:40:06.501Z [>> msg <<] debug: port7070
+2019-09-25T11:41:37.909Z [>> msg <<] debug: port7070
+2019-09-25T11:41:59.386Z [>> msg <<] debug: get all
+2019-09-25T11:41:59.464Z [>> msg <<] error: 4000
+2019-09-25T11:41:59.814Z [>> msg <<] error: 4000
+2019-09-25T11:42:09.378Z [>> msg <<] error: 4000
+2019-09-25T11:42:31.945Z [>> msg <<] error: 4000
+2019-09-25T11:43:14.689Z [>> msg <<] debug: get by name:
+2019-09-25T11:43:24.998Z [>> msg <<] debug: >>> save
+2019-09-25T11:43:29.318Z [>> msg <<] debug: get by name:
+2019-09-25T11:43:32.846Z [>> msg <<] debug: get by name:
+2019-09-25T11:43:54.038Z [>> msg <<] debug: get by name:
+2019-09-25T11:44:16.669Z [>> msg <<] debug: >>> save
+2019-09-25T11:45:20.958Z [>> msg <<] debug: get by name:
+2019-09-25T11:45:27.605Z [>> msg <<] debug: >>> save
+2019-09-25T11:45:36.189Z [>> msg <<] debug: get by name:
+2019-09-25T11:45:57.573Z [>> msg <<] debug: >>> save
+2019-09-25T11:46:07.789Z [>> msg <<] debug: get by name:

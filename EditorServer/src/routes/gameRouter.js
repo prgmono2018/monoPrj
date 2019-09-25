@@ -16,7 +16,7 @@ router.get('/getAllProjects', function(req, res, next) {
 
 router.post('/save', function(req, res, next) {
   //  let fileName =req.query.data;
-  log.debug(">>> save");
+  log.debug(">>>>> save");
   const prjName = req.body.prjName;
   const newDocument = req.body.new;
   const preload = req.body.code1;
@@ -28,7 +28,9 @@ router.post('/save', function(req, res, next) {
   log.debug("preload:"+preload);
   log.debug("create:"+create);
   log.debug("update:"+update);
+  log.debug("1111111ddd111111");
   var gameM = new gameModel({preload:preload,update:update,render:render,create:create,prjName:req.body.prjName });
+  log.debug("11111111111111111");
   if (newDocument=="true"){
         gameM.save()
         .then(item => {
@@ -39,9 +41,9 @@ router.post('/save', function(req, res, next) {
           {
               res.status(500).send({ "txt": "There is already project with that name. pls choose another"});
           }else{
-            res.status(500).send({"txt": "server error"});
+            res.status(500).send({"txt": "server error", "error":err});
           }
-          log.debug(err)
+          log.error("this is error="+err)
         });
   }else{
     let obj={
@@ -52,10 +54,11 @@ router.post('/save', function(req, res, next) {
       if(docs) {
         res.json({uuid:prjName,"op":"update","txt":`The project ${prjName} was updated`});
       } else {
+        log.error("error update1="+err);
         res.status(500).send({"txt": "server error"});
       }
     }).catch((err)=>{
-      console.log("error="+err);
+      log.error("error update="+err);
       return res.status(500).json({uuid:item.prjName,"op":"update","txt":err.txt});
     
     })

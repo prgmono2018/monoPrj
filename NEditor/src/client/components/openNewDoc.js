@@ -111,8 +111,7 @@ export default class OpenNewDoc extends Component {
         let listid = this.state.upperPageBound + 1;
         this.setState({ currentPage: listid});
         this.setPrevAndNextBtnClass(listid);
-       // $("span.active").removeClass('active');
-        //$('span#'+listid).addClass('active');
+
   }
     btnDecrementClick(event) {
            
@@ -122,8 +121,7 @@ export default class OpenNewDoc extends Component {
       let listid = this.state.upperPageBound - this.state.pageBound;
       this.setState({ currentPage: listid});
       this.setPrevAndNextBtnClass(listid);
-     // $("span.active").removeClass('active');
-      //$('span#'+listid).addClass('active');
+
   }
 
   btnPrevClick(event) {
@@ -135,8 +133,7 @@ export default class OpenNewDoc extends Component {
     let listid = this.state.currentPage - 1;
     this.setState({ currentPage : listid});
     this.setPrevAndNextBtnClass(listid);
-    //$("span.active").removeClass('active');
-    //$('span#'+listid).addClass('active');
+ 
 }
 btnNextClick(event) {
    
@@ -148,8 +145,7 @@ this.preventEvents(event);
     let listid = this.state.currentPage + 1;
     this.setState({ currentPage : listid});
     this.setPrevAndNextBtnClass(listid);
-    //$("span.active").removeClass('active');
-   // $('span#'+listid).addClass('active');
+
 }
 
 preventEvents(event){
@@ -163,10 +159,9 @@ preventEvents(event){
         if (this.props.data.length>0){
         names=this.props.data.map(game => 
             <div key={game.prjName}
-        onClick={(e)=>this.onClickProject(e,game.prjName)}>{game.prjName}</div>);
+        onClick={(e)=>this.onClickProject(e,game.prjName)} style={{width:'fit-content'}}>{game.prjName}</div>);
         }
 
-/************ */
 
            
         // Logic for displaying current Prjs
@@ -176,25 +171,12 @@ preventEvents(event){
         if (names.length>0)
             currentPrjs = names.slice(indexOfFirstPrj, indexOfLastPrj);
 
-     /*   const renderPrjs = currentPrjs.map((prj, index) => {
-          return <li key={index}>{prj}</li>;
-        });*/
-
         // Logic for displaying page numbers
         const pageNumbers = [];
         for (let i = 1; i <= Math.ceil(names.length / prjsPerPage); i++) {
           pageNumbers.push(i);
         }
-     /*   const rowLen = pageNumbers.length;
-        const renderPageNumbers = pageNumbers.map((number,index) => {
-            return (
-               <b key={number}
-                id={number}
-                onClick={this.handleClick}>  { ((index+1)<rowLen)? number+", ": number}  
-                </b>
-             
-            );
-          });*/
+    
           const renderPageNumbers = pageNumbers.map(number => {
             if(number === 1 && currentPage === 1){
                 return(

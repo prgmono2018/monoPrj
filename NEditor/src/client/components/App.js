@@ -20,25 +20,18 @@ export default class App extends Component {
         this.setDocumentStatus = this.setDocumentStatus.bind(this);
    
     }
-
-    //editor.getSession().setValue("hhhhhhhhhhhhhhhhhhhhh")
-  
+    componentDidCatch(error, info) {
+      console.log("ssssss")
+      }
+   
     componentDidMount () {
+        console.log("componentDidMount")
          axios.get(`${process.env.REACT_APP_EDITOR_SERVER}/${process.env.REACT_APP_GETALL}`)
-        .then(
-         
-        json => {
-            this.setState({data:json.data.docs});
-          }
-         
-        ).catch(error => {
-         
-            //console.log('error code=', error.response.status);
+        .then( json =>  this.setState({data:json.data.docs}))
+        .catch(error => {
+            console.log(error)
           })
 
-          
-         
-          //setTimeout(function(){document.querySelector('#donateBanner').style.display="none"}, 1300);
 
     }
     setDocumentStatus(saveNew,prjName,doc){
@@ -74,7 +67,7 @@ export default class App extends Component {
                             <li id="tab1"><a id="create"  title="Create - Ctrl+2"><span>create</span></a></li>
                             <li id="tab2"><a id="update"  title="Update - Ctrl+3"><span>update</span></a></li>
                             <li id="tab3"><a id="render"  title="Render - Ctrl+4"><span>render</span></a></li>
-                            <li id="tab4"><a id="game"  title="Play - Ctrl+Enter"><span>PLAY</span></a></li>
+                            <li id="tab4"><a id="game"  title="Play - Ctrl+Enter"><span>play</span></a></li>
                             <li id="tab5"><a id="help"  title="Help - Ctrl+5"><span>Help</span></a></li>
                         </ul>
                     </nav>

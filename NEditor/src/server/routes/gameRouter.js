@@ -8,9 +8,10 @@ router.get('/getAllProjects', function(req, res) {
   log.debug("get all")
   gameModel.find({}, function(err, docs) {
     if (!err){ 
-        //log.debug(docs);
         res.json({uuid:"all","op":"getall","docs": docs});
-    } else {throw err;}
+    } else {
+      log.error(err.stack);
+    }
 });
 });
 
@@ -23,11 +24,6 @@ router.post('/save', function(req, res) {
   const create = req.body.code2;
   const update = req.body.code3
   const render = req.body.code4;
-  //  let fileName =req.query.data;
-  log.debug("render:"+render);
-  log.debug("preload:"+preload);
-  log.debug("create:"+create);
-  log.debug("update:"+update);
   var gameM = new gameModel({preload:preload,update:update,render:render,create:create,prjName:req.body.prjName });
   if (newDocument=="true"){
         gameM.save()
@@ -37,11 +33,13 @@ router.post('/save', function(req, res) {
         .catch(err => {
           if (err.code=="11000")
           {
+              log.error("Project exists "+err.stack);
               res.status(500).send({ "txt": "There is already project with that name. pls choose another"});
           }else{
+            log.error(err.stack);
             res.status(500).send({"txt": "server error"});
           }
-          log.debug(err)
+          log.debug("The error="+err);
         });
   }else{
     let obj={
@@ -52,11 +50,11 @@ router.post('/save', function(req, res) {
       if(docs) {
         res.json({uuid:prjName,"op":"update","txt":`The project ${prjName} was updated`});
       } else {
-        res.status(500).send({"txt": "server error"});
+        res.status(500).send({"txt": "Server Error"});
       }
     }).catch((err)=>{
-      //console.log("error="+err);
-      return res.status(500).json({uuid:prjName,"op":"update","txt":err.txt});
+      log.error("Error Stack: "+err.stack);
+      return res.status(500).json({uuid:prjName,"op":"update","txt":"Server Error Occured",err:err});
     
     })
 
@@ -65,15 +63,20 @@ router.post('/save', function(req, res) {
 });
 
 router.get('/get/:name', function(req, res) {
-  log.debug("get by name")
+  log.debug("get by name:")
   //const prjName = req.body.prjName;
   const prjName =req.params.name;
   gameModel.find({prjName:prjName}, function(err, docs) {
     if (!err){ 
         //log.debug(docs);
         res.json({uuid:"all","op":"getOne","docs": docs});
-    } else {throw err;}
+    } else {
+      log.error(err.stack);
+      throw err;
+    }
 });
 });
+
+
 
 module.exports = router;

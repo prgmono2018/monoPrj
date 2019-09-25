@@ -47,7 +47,6 @@ export default class SaveBtn extends Component {
                 url: `${process.env.REACT_APP_EDITOR_SERVER}/${process.env.REACT_APP_SAVE}` ,
                 data: bundle,
                 success: function(data) {
-                    //data = JSON.parse(data);
                     if (data.uuid !== 'error')
                     {
                         alert(data.txt);
@@ -59,7 +58,7 @@ export default class SaveBtn extends Component {
                 }.bind(this),
                 error: function(data) {
                     alert(data.responseJSON.txt)
-                  //  window.addEventListener('beforeunload', confirmOnPageExit);
+  
                 }.bind(this),
                 complete: function() {
                         svd = -1;

@@ -1,0 +1,236 @@
+2019-09-24T09:47:17.617Z [>> msg <<] error: bla
+2019-09-24T09:58:09.729Z [>> msg <<] error: Project exists MongoError: E11000 duplicate key error collection: MonoPrj.gameDatas index: prjName_1 dup key: { : "" }
+    at Function.create (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\error.js:44:12)
+    at toError (C:\gitProjects\NEditor\node_modules\mongodb\lib\utils.js:150:22)
+    at coll.s.topology.insert (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\common_functions.js:266:39)
+    at C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:420:18
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-09-24T10:01:02.401Z [>> msg <<] error: Project exists MongoError: E11000 duplicate key error collection: MonoPrj.gameDatas index: prjName_1 dup key: { : "ccc" }
+    at Function.create (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\error.js:44:12)
+    at toError (C:\gitProjects\NEditor\node_modules\mongodb\lib\utils.js:150:22)
+    at coll.s.topology.insert (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\common_functions.js:266:39)
+    at C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:420:18
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-09-24T10:06:48.507Z [>> msg <<] error: Project exists MongoError: E11000 duplicate key error collection: MonoPrj.gameDatas index: prjName_1 dup key: { : "" }
+    at Function.create (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\error.js:44:12)
+    at toError (C:\gitProjects\NEditor\node_modules\mongodb\lib\utils.js:150:22)
+    at coll.s.topology.insert (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\common_functions.js:266:39)
+    at C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:420:18
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-09-24T11:23:30.931Z [>> msg <<] error: 4000
+2019-09-24T11:23:51.458Z [>> msg <<] error: 4000
+2019-09-24T11:23:51.578Z [>> msg <<] error: 4000
+2019-09-24T11:25:39.586Z [>> msg <<] error: 4000
+2019-09-24T11:25:43.400Z [>> msg <<] error: 4000
+2019-09-24T11:25:54.866Z [>> msg <<] error: 4000
+2019-09-24T11:26:38.505Z [>> msg <<] error: 4000
+2019-09-24T11:27:18.245Z [>> msg <<] error: 4000
+2019-09-25T05:50:55.240Z [>> msg <<] error: 4000
+2019-09-25T05:51:53.787Z [>> msg <<] error: 4000
+2019-09-25T05:54:34.114Z [>> msg <<] error: 4000
+2019-09-25T05:54:43.949Z [>> msg <<] error: 4000
+2019-09-25T05:54:52.763Z [>> msg <<] error: 4000
+2019-09-25T05:55:01.651Z [>> msg <<] error: 4000
+2019-09-25T05:57:31.634Z [>> msg <<] error: 4000
+2019-09-25T05:58:44.586Z [>> msg <<] error: 4000
+2019-09-25T06:01:56.146Z [>> msg <<] error: 4000
+2019-09-25T06:01:56.554Z [>> msg <<] error: 4000
+2019-09-25T06:10:07.086Z [>> msg <<] error: MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms
+    at connect (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:331:13)
+    at makeConnection (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:39:11)
+    at callback (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:261:5)
+    at Socket.err (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:286:7)
+    at Object.onceWrapper (events.js:273:13)
+    at Socket.emit (events.js:182:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-09-25T06:10:07.089Z [>> msg <<] error: MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms
+    at connect (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:331:13)
+    at makeConnection (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:39:11)
+    at callback (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:261:5)
+    at Socket.err (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:286:7)
+    at Object.onceWrapper (events.js:273:13)
+    at Socket.emit (events.js:182:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-09-25T06:12:17.895Z [>> msg <<] error: MongoError: server instance pool was destroyed
+    at basicWriteValidations (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:570:41)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:715:16)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\topologies\topology_base.js:327:25)
+    at updateDocuments (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\common_functions.js:367:19)
+    at executeLegacyOperation (C:\gitProjects\NEditor\node_modules\mongodb\lib\utils.js:417:24)
+    at Collection.<anonymous> (C:\gitProjects\NEditor\node_modules\mongodb\lib\collection.js:817:10)
+    at Collection.deprecated [as update] (internal/util.js:67:15)
+    at NativeCollection.(anonymous function) [as update] (C:\gitProjects\NEditor\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:166:28)
+    at NodeCollection.update (C:\gitProjects\NEditor\node_modules\mquery\lib\collection\node.js:66:19)
+    at model.Query._updateThunk (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3694:23)
+    at model.Query.<anonymous> (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3732:23)
+    at model.Query._wrappedThunk [as _execUpdate] (C:\gitProjects\NEditor\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\gitProjects\NEditor\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-09-25T06:22:43.152Z [>> msg <<] error: MongoError: server instance pool was destroyed
+    at basicWriteValidations (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:570:41)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:715:16)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\topologies\topology_base.js:327:25)
+    at updateDocuments (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\common_functions.js:367:19)
+    at executeLegacyOperation (C:\gitProjects\NEditor\node_modules\mongodb\lib\utils.js:417:24)
+    at Collection.<anonymous> (C:\gitProjects\NEditor\node_modules\mongodb\lib\collection.js:817:10)
+    at Collection.deprecated [as update] (internal/util.js:67:15)
+    at NativeCollection.(anonymous function) [as update] (C:\gitProjects\NEditor\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:166:28)
+    at NodeCollection.update (C:\gitProjects\NEditor\node_modules\mquery\lib\collection\node.js:66:19)
+    at model.Query._updateThunk (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3694:23)
+    at model.Query.<anonymous> (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3732:23)
+    at model.Query._wrappedThunk [as _execUpdate] (C:\gitProjects\NEditor\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\gitProjects\NEditor\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-09-25T06:23:09.019Z [>> msg <<] error: MongoError: server instance pool was destroyed
+    at basicWriteValidations (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:570:41)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:715:16)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\topologies\topology_base.js:327:25)
+    at updateDocuments (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\common_functions.js:367:19)
+    at executeLegacyOperation (C:\gitProjects\NEditor\node_modules\mongodb\lib\utils.js:417:24)
+    at Collection.<anonymous> (C:\gitProjects\NEditor\node_modules\mongodb\lib\collection.js:817:10)
+    at Collection.deprecated [as update] (internal/util.js:67:15)
+    at NativeCollection.(anonymous function) [as update] (C:\gitProjects\NEditor\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:166:28)
+    at NodeCollection.update (C:\gitProjects\NEditor\node_modules\mquery\lib\collection\node.js:66:19)
+    at model.Query._updateThunk (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3694:23)
+    at model.Query.<anonymous> (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3732:23)
+    at model.Query._wrappedThunk [as _execUpdate] (C:\gitProjects\NEditor\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\gitProjects\NEditor\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-09-25T06:23:35.749Z [>> msg <<] error: MongoError: server instance pool was destroyed
+    at basicWriteValidations (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:570:41)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:715:16)
+    at Server.update (C:\gitProjects\NEditor\node_modules\mongodb\lib\topologies\topology_base.js:327:25)
+    at updateDocuments (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\common_functions.js:367:19)
+    at executeLegacyOperation (C:\gitProjects\NEditor\node_modules\mongodb\lib\utils.js:417:24)
+    at Collection.<anonymous> (C:\gitProjects\NEditor\node_modules\mongodb\lib\collection.js:817:10)
+    at Collection.deprecated [as update] (internal/util.js:67:15)
+    at NativeCollection.(anonymous function) [as update] (C:\gitProjects\NEditor\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:166:28)
+    at NodeCollection.update (C:\gitProjects\NEditor\node_modules\mquery\lib\collection\node.js:66:19)
+    at model.Query._updateThunk (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3694:23)
+    at model.Query.<anonymous> (C:\gitProjects\NEditor\node_modules\mongoose\lib\query.js:3732:23)
+    at model.Query._wrappedThunk [as _execUpdate] (C:\gitProjects\NEditor\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\gitProjects\NEditor\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-09-25T06:27:47.054Z [>> msg <<] error: MongoError: pool destroyed
+    at Pool.write (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:860:12)
+    at _command (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\wireprotocol\command.js:107:10)
+    at command (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\wireprotocol\command.js:25:5)
+    at Object.query (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\wireprotocol\query.js:57:3)
+    at Server.query (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:640:16)
+    at FindOperation.execute (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\find.js:24:12)
+    at topology.selectServer (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\execute_operation.js:163:17)
+    at Server.selectServer (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:828:3)
+    at Server.selectServer (C:\gitProjects\NEditor\node_modules\mongodb\lib\topologies\topology_base.js:363:32)
+    at executeWithServerSelection (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\execute_operation.js:150:12)
+    at executeOperation (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\execute_operation.js:81:16)
+    at Cursor._initializeCursor (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\cursor.js:545:7)
+    at Cursor._initializeCursor (C:\gitProjects\NEditor\node_modules\mongodb\lib\cursor.js:191:11)
+    at nextFunction (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\cursor.js:748:10)
+    at Cursor._next (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\cursor.js:202:5)
+    at fetchDocs (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\to_array.js:27:14)
+2019-09-25T06:27:47.144Z [>> msg <<] error: 4000
+2019-09-25T06:27:47.454Z [>> msg <<] error: 4000
+2019-09-25T06:28:45.660Z [>> msg <<] error: 4000
+2019-09-25T06:28:45.995Z [>> msg <<] error: 4000
+2019-09-25T06:31:44.423Z [>> msg <<] error: MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms
+    at connect (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:331:13)
+    at makeConnection (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:39:11)
+    at callback (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:261:5)
+    at Socket.err (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:286:7)
+    at Object.onceWrapper (events.js:273:13)
+    at Socket.emit (events.js:182:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-09-25T06:31:44.433Z [>> msg <<] error: MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms
+    at connect (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:331:13)
+    at makeConnection (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:39:11)
+    at callback (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:261:5)
+    at Socket.err (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:286:7)
+    at Object.onceWrapper (events.js:273:13)
+    at Socket.emit (events.js:182:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-09-25T07:01:27.030Z [>> msg <<] error: 4000
+2019-09-25T07:01:27.394Z [>> msg <<] error: 4000
+2019-09-25T07:07:20.122Z [>> msg <<] error: Error Stack: MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms
+    at connect (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:331:13)
+    at makeConnection (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:39:11)
+    at callback (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:261:5)
+    at Socket.err (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:286:7)
+    at Object.onceWrapper (events.js:273:13)
+    at Socket.emit (events.js:182:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-09-25T07:08:54.232Z [>> msg <<] error: MongoError: pool destroyed
+    at Pool.write (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:860:12)
+    at _command (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\wireprotocol\command.js:107:10)
+    at command (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\wireprotocol\command.js:25:5)
+    at Object.query (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\wireprotocol\query.js:57:3)
+    at Server.query (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:640:16)
+    at FindOperation.execute (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\find.js:24:12)
+    at topology.selectServer (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\execute_operation.js:163:17)
+    at Server.selectServer (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:828:3)
+    at Server.selectServer (C:\gitProjects\NEditor\node_modules\mongodb\lib\topologies\topology_base.js:363:32)
+    at executeWithServerSelection (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\execute_operation.js:150:12)
+    at executeOperation (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\execute_operation.js:81:16)
+    at Cursor._initializeCursor (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\cursor.js:545:7)
+    at Cursor._initializeCursor (C:\gitProjects\NEditor\node_modules\mongodb\lib\cursor.js:191:11)
+    at nextFunction (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\cursor.js:748:10)
+    at Cursor._next (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\cursor.js:202:5)
+    at fetchDocs (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\to_array.js:27:14)
+2019-09-25T07:11:06.226Z [>> msg <<] error: 4000
+2019-09-25T07:11:06.551Z [>> msg <<] error: 4000
+2019-09-25T07:12:52.353Z [>> msg <<] error: Error Stack: MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms
+    at connect (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:331:13)
+    at makeConnection (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:39:11)
+    at callback (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:261:5)
+    at Socket.err (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\connect.js:286:7)
+    at Object.onceWrapper (events.js:273:13)
+    at Socket.emit (events.js:182:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-09-25T07:13:06.375Z [>> msg <<] error: MongoError: pool destroyed
+    at Pool.write (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\connection\pool.js:860:12)
+    at _command (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\wireprotocol\command.js:107:10)
+    at command (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\wireprotocol\command.js:25:5)
+    at Object.query (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\wireprotocol\query.js:57:3)
+    at Server.query (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:640:16)
+    at FindOperation.execute (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\find.js:24:12)
+    at topology.selectServer (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\execute_operation.js:163:17)
+    at Server.selectServer (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\topologies\server.js:828:3)
+    at Server.selectServer (C:\gitProjects\NEditor\node_modules\mongodb\lib\topologies\topology_base.js:363:32)
+    at executeWithServerSelection (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\execute_operation.js:150:12)
+    at executeOperation (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\execute_operation.js:81:16)
+    at Cursor._initializeCursor (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\cursor.js:545:7)
+    at Cursor._initializeCursor (C:\gitProjects\NEditor\node_modules\mongodb\lib\cursor.js:191:11)
+    at nextFunction (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\cursor.js:748:10)
+    at Cursor._next (C:\gitProjects\NEditor\node_modules\mongodb\lib\core\cursor.js:202:5)
+    at fetchDocs (C:\gitProjects\NEditor\node_modules\mongodb\lib\operations\to_array.js:27:14)
+2019-09-25T07:33:23.224Z [>> msg <<] error: 4000
+2019-09-25T07:33:23.630Z [>> msg <<] error: 4000
+2019-09-25T07:35:15.830Z [>> msg <<] error: 4000
+2019-09-25T07:35:16.262Z [>> msg <<] error: 4000
+2019-09-25T07:49:35.967Z [>> msg <<] error: 4000
+2019-09-25T07:49:36.382Z [>> msg <<] error: 4000
+2019-09-25T08:25:51.972Z [>> msg <<] error: 4000
+2019-09-25T08:36:47.551Z [>> msg <<] error: 4000
+2019-09-25T08:36:47.910Z [>> msg <<] error: 4000
+2019-09-25T11:36:42.981Z [>> msg <<] error: 4000
+2019-09-25T11:36:43.327Z [>> msg <<] error: 4000
+2019-09-25T11:38:44.252Z [>> msg <<] error: 4000
+2019-09-25T11:38:44.727Z [>> msg <<] error: 4000
+2019-09-25T11:39:13.447Z [>> msg <<] error: 4000
+2019-09-25T11:39:16.851Z [>> msg <<] error: 4000
+2019-09-25T11:39:23.909Z [>> msg <<] error: 4000
+2019-09-25T11:41:59.464Z [>> msg <<] error: 4000
+2019-09-25T11:41:59.814Z [>> msg <<] error: 4000
+2019-09-25T11:42:09.378Z [>> msg <<] error: 4000
+2019-09-25T11:42:31.945Z [>> msg <<] error: 4000
