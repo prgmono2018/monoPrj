@@ -17,7 +17,7 @@ router.get('/getAllProjects', function(req, res) {
 
 router.post('/save', function(req, res) {
   //  let fileName =req.query.data;
-  log.debug(">>> save");
+  log.info(">>> save");
   const prjName = req.body.prjName;
   const newDocument = req.body.new;
   const preload = req.body.code1;
@@ -39,7 +39,7 @@ router.post('/save', function(req, res) {
             log.error(err.stack);
             res.status(500).send({"txt": "server error"});
           }
-          log.debug("The error="+err);
+          log.error("The error="+err);
         });
   }else{
     let obj={
@@ -55,7 +55,6 @@ router.post('/save', function(req, res) {
     }).catch((err)=>{
       log.error("Error Stack: "+err.stack);
       return res.status(500).json({uuid:prjName,"op":"update","txt":"Server Error Occured",err:err});
-    
     })
 
 
@@ -63,7 +62,7 @@ router.post('/save', function(req, res) {
 });
 
 router.get('/get/:name', function(req, res) {
-  log.debug("get by name:")
+  log.info("get by name:")
   //const prjName = req.body.prjName;
   const prjName =req.params.name;
   gameModel.find({prjName:prjName}, function(err, docs) {

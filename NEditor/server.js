@@ -23,7 +23,7 @@ app.get('/', function(req, res) {
 
 // Route not found (404)
 app.use(function(req, res, next) {
-  log.error("4000")
+  log.error("404")
   return res.status(404).send({ message: 'Route'+req.url+' Not found.', "txt": 'Route'+req.url+' Not found. Error 404' });
 });
 
@@ -31,5 +31,5 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   return res.status(500).send({ error: err,message: 'Server error occured', "txt": 'Server error occured'  });
 });
-app.listen(process.env.PORT,()=>console.log("running "+process.env.PORT));
+app.listen(process.env.PORT,()=>log.info("running "+process.env.PORT));
 

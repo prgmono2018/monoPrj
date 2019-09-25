@@ -62,7 +62,7 @@ export default class OpenNewDoc extends Component {
     
     {
         var popup = document.getElementById("myPopup");
-        //popup.innerHTML="Loading......"
+        $("#preload").click();
         popup.classList.toggle("show");
        
     }
