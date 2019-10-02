@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static(path.join(__dirname, 'src','client')));
 app.use(gameRouter);
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname,'dist', 'index.html'));
+  return res.sendFile(path.join(__dirname,'dist', 'index.html'));
 });
 
 // Route not found (404)

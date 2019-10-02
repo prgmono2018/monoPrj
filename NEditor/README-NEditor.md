@@ -7,6 +7,6 @@ This project consists on two projects:
 Run the project:
 
 The project contains .env file for changing the configuration(host\port etc..)
-- Run the server- npm run prod - The server will run at port 7000 ( as configured at .etc file)
-- Run the client: npm start -The react client will run on port 8080  at webpack  dev server- http://localhost:8080
+- Run the server- npm run prod - The server will run at port 7070 ( as configured at .etc file)
+
  
