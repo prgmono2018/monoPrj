@@ -23,7 +23,7 @@
     "@sanity/desk-tool": "^0.140.0",
     "arraybuffer-to-buffer": "0.0.5",
     "aws-sdk": "^2.401.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.0",
     "download-file": "^0.1.5",
     "file-to-array-buffer": "^1.0.0",
