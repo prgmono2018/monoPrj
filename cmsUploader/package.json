@@ -37,7 +37,7 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "aws-s3": "^2.0.2",
-    "aws-sdk": "^2.397.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.18.0",
     "css-loader": "^2.1.0",
     "file-loader": "^3.0.1",
