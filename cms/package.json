@@ -22,7 +22,7 @@
     "@sanity/default-login": "^0.140.0",
     "@sanity/desk-tool": "^0.140.0",
     "arraybuffer-to-buffer": "0.0.5",
-    "aws-sdk": "^2.401.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.0",
     "download-file": "^0.1.5",
